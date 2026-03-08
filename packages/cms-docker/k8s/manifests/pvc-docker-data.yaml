@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cmscrm-docker-data-pvc
+  namespace: cmscrm
+spec:
+  storageClassName: default
+  volumeName: cmscrm-docker-data-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi

@@ -1,0 +1,44 @@
+#
+# Crowdin CLI configuration for Documentation translations
+# See https://crowdin.github.io/crowdin-cli/configuration for more information
+#
+
+"project_id": 2
+"preserve_hierarchy": true
+"base_url": "https://cms.api.crowdin.com"
+
+files: [
+  {
+    #
+    # MDX documentation files - user-guide
+    # Using md type to preserve JSX component structure
+    # This prevents Crowdin from reformatting <Warning>, <Accordion>, etc.
+    #
+    "source": "packages/cms-docs/user-guide/**/*.mdx",
+    "translation": "packages/cms-docs/l/%two_letters_code%/user-guide/**/%original_file_name%",
+  },
+  {
+    #
+    # MDX documentation files - developers
+    # Using md type to preserve JSX component structure
+    #
+    "source": "packages/cms-docs/developers/**/*.mdx",
+    "translation": "packages/cms-docs/l/%two_letters_code%/developers/**/%original_file_name%",
+  },
+  {
+    #
+    # MDX documentation files - cms-ui
+    # Using md type to preserve JSX component structure
+    #
+    "source": "packages/cms-docs/cms-ui/**/*.mdx",
+    "translation": "packages/cms-docs/l/%two_letters_code%/cms-ui/**/%original_file_name%",
+  },
+  {
+    #
+    # Navigation labels template - translated into per-locale navigation.json
+    #
+    "source": "packages/cms-docs/navigation/navigation.template.json",
+    "translation": "packages/cms-docs/l/%two_letters_code%/navigation.json",
+  }
+]
+

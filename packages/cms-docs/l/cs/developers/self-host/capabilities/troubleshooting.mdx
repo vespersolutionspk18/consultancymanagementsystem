@@ -1,0 +1,227 @@
+---
+title: Řešení potíží
+---
+
+## Řešení potíží
+
+If you encounter any problem while setting up environment for development, upgrading your instance or self-hosting,
+here are some solutions for common problems.
+
+### Vlastní hosting
+
+#### First install results in `password authentication failed for user "postgres"`
+
+🚨 **DŮLEŽITÉ: Toto řešení je POUZE pro nové instalace** 🚨
+Pokud máte existující instanci CMS s produkčními daty, **NEPROVÁDĚJTE** tyto kroky, protože trvale smažou vaši databázi!
+
+Při první instalaci CMS můžete chtít změnit výchozí heslo pro databázi.
+Heslo, které nastavíte během první instalace, se stane trvale uloženým v objemu databáze. Pokud se později pokusíte toto heslo změnit v konfiguraci, aniž byste odstranili starý objem, dojde k chybám autentizace, protože databáze stále používá původní heslo.
+
+⚠️ VAROVÁNÍ: Následující kroky trvale SMAŽÍ veškerá data z databáze! ⚠️
+Pokračujte pouze v případě, že se jedná o novou instalaci bez důležitých dat.
+
+K aktualizaci `PG_DATABASE_PASSWORD` musíte:
+
+```sh
+# Aktualizovat PG_DATABASE_PASSWORD ve .env
+docker compose down --volumes
+docker compose up -d
+```
+
+#### CR line breaks found [Windows]
+
+This is due to the line break characters of Windows and the git configuration. Zkuste spustit:
+
+```
+git config --global core.autocrlf false
+```
+
+Pak smažte úložiště a naklonujte jej znovu.
+
+#### Chybí schéma metadat
+
+Během instalace CMS musíte nastavit svou postgres databázi s správnými schématy, rozšířeními a uživateli.
+Pokud se vám podaří spustit toto nastavování, měli byste mít ve své databázi schémata `default` a `metadata`.
+Pokud ne, ujistěte se, že na vašem počítači neběží více než jedna instance postgres.
+
+#### Cannot find module 'cms-emails' or its corresponding type declarations.
+
+Před spuštěním inicializace databáze musíte sestavit balíček `cms-emails` s `npx nx run cms-emails:build`
+
+#### Chybí balíček cms-x
+
+Ujistěte se, že v kořenovém adresáři spouštíte `yarn` a poté spusťte `npx nx server:dev cms-server`. Pokud stále nefunguje, zkuste chybějící balíček sestavit ručně.
+
+#### Lint při ukládání nefunguje
+
+Toto by mělo fungovat přímo s nainstalovaným rozšířením eslint. If this doesn't work try adding this to your vscode setting (on the dev container scope):
+
+```
+"editor.codeActionsOnSave": {
+
+  "source.fixAll.eslint": "explicit"
+
+}
+```
+
+#### Při spuštění `npx nx start` nebo `npx nx start cms-front` došlo k chybě nedostatku paměti
+
+In `packages/cms-front/.env` uncomment `VITE_DISABLE_TYPESCRIPT_CHECKER=true` and `VITE_DISABLE_ESLINT_CHECKER=true` to disable background checks thus reducing amount of needed RAM.
+
+**If it does not work:**
+Run only the services you need, instead of `npx nx start`. Například pokud pracujete na serveru, spusťte pouze `npx nx worker cms-server`
+
+**If it does not work:**
+If you tried to run only `npx nx run cms-server:start` on WSL and it's failing with the below memory error:
+
+`FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory`
+
+Pro obejití proveďte níže uvedený příkaz v terminálu nebo jej přidejte do profilu .bashrc, aby se automatizovalo nastavení:
+
+`export NODE_OPTIONS="--max-old-space-size=8192"`
+
+Příznak --max-old-space-size=8192 nastavuje horní limit 8 GB pro hromadu v Node.js; využití se škáluje s požadavkem aplikace.
+Odkaz: https://stackoverflow.com/questions/56982005/where-do-i-set-node-options-max-old-space-size-2048
+
+**If it does not work:**
+Investigate which processes are taking you most of your machine RAM. V CMS jsme si všimli, že některá rozšíření VScode zabírala hodně paměti RAM, takže jsme je dočasně deaktivovali.
+
+**If it does not work:**
+Restart your machine helps to clean up ghost processes.
+
+#### Při běhu `npx nx start` se v protokolech objevují podivné [0] a [1]
+
+To je očekávané, protože příkaz `npx nx start` spouští více příkazů v pozadí
+
+#### E-maily nejsou odesílány
+
+Většinou je to proto, že `worker` neběží na pozadí. Zkuste spustit
+
+```
+npx nx worker cms-server
+```
+
+#### Nelze připojit můj účet Microsoft 365
+
+Většinou je to proto, že váš administrátor pro váš účet nepovolil licenci Microsoft 365. Zkontrolujte [https://admin.microsoft.com/](https://admin.microsoft.com/Adminportal/Home).
+
+Pokud máte chybový kód `AADSTS50020`, pravděpodobně používáte osobní účet Microsoft. Tento přístup ještě není podporován. Více informací [zde](https://learn.microsoft.com/fr-fr/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50020-user-account-identity-provider-does-not-exist)
+
+#### Při běhu `yarn` se v konzoli objevují varování
+
+Varování informují o načítání dalších závislostí, které nejsou explicitně uvedeny v `package.json`, takže pokud se neobjeví žádná vážná chyba, vše by mělo fungovat podle očekávání.
+
+#### Když uživatel přistoupí na přihlašovací stránku, v protokolech se objeví chybová zpráva o neautorizovaném uživateli, který se snaží přistoupit k pracovnímu prostoru
+
+To je očekávané, protože uživatel je neautorizovaný, když je odhlášen, protože jeho identita není ověřena.
+
+#### Jak zkontrolovat, zda váš worker běží?
+
+* Jděte na [webhook-test.com](https://webhook-test.com/) a zkopírujte **Svou unikátní webhook URL**.
+
+<div style={{textAlign: 'center'}}>
+  <img src="/images/docs/developers/self-hosting/webhook-test.jpg" alt="Test webhooku" />
+</div>
+
+* Otevřete svou CMS aplikaci, přejděte na `/settings` a na levé dolní části obrazovky aktivujte přepínač **Pokročilé**.
+* Vytvořte nový webhook.
+* Vložte **Svou unikátní webhook URL** do pole **Endpoint Url** ve CMS. Nastavte **Filtry** na `Companies` a `Created`.
+
+<div style={{textAlign: 'center'}}>
+  <img src="/images/docs/developers/self-hosting/webhook-settings.jpg" alt="Nastavení webhooku" />
+</div>
+
+* Přejděte na `/objects/companies` a vytvořte nový záznam společnosti.
+* Vraťte se na [webhook-test.com](https://webhook-test.com/) a zkontrolujte, zda byla přijata nová **POST request**.
+
+<div style={{textAlign: 'center'}}>
+  <img src="/images/docs/developers/self-hosting/webhook-test-result.jpg" alt="Výsledek testu webhooku" />
+</div>
+
+* Pokud byla přijata **POST request**, váš worker běží úspěšně. V opačném případě je potřeba zkontrolovat váš worker.
+
+#### Front-end se nedaří spustit a vrací chybu TS5042: Možnost 'project' nelze kombinovat se zdrojovými soubory na příkazovém řádku
+
+Comment out checker plugin in `packages/cms-ui/vite-config.ts` like in example below
+
+```
+plugins: [
+      react({ jsxImportSource: '@emotion/react' }),
+      tsconfigPaths(),
+      svgr(),
+      dts(dtsConfig),
+      // checker(checkersConfig),
+      wyw({
+        include: [
+          '**/OverflowingTextWithTooltip.tsx',
+          '**/Chip.tsx',
+          '**/Tag.tsx',
+          '**/Avatar.tsx',
+          '**/AvatarChip.tsx',
+        ],
+        babelOptions: {
+          presets: ['@babel/preset-typescript', '@babel/preset-react'],
+        },
+      }),
+    ],
+```
+
+#### Administrační panel není přístupný
+
+Spusťte `UPDATE core."user" SET "canAccessFullAdminPanel" = TRUE WHERE email = 'you@yourdomain.com';` v databázovém kontejneru pro získání přístupu k administračnímu panelu.
+
+### 1-click Docker compose
+
+#### Nelze se přihlásit
+
+Pokud se nemůžete přihlásit po nastavení:
+
+1. Spusťte následující příkazy:
+   ```bash
+   docker exec -it cms-server-1 yarn
+   docker exec -it cms-server-1 npx nx database:reset --configuration=no-seed
+   ```
+2. Restartujte Docker kontejnery:
+   ```bash
+   docker compose down
+   docker compose up -d
+   ```
+
+Poznámka: příkaz database:reset kompletně smaže vaši databázi a vytvoří ji znovu od základu.
+
+#### Problémy s připojením za reverzní proxy
+
+Pokud provozujete CMS za reverzní proxy a máte problémy s připojením:
+
+1. **Ověřte SERVER_URL:**
+
+   Ujistěte se, že `SERVER_URL` ve vašem `.env` souboru odpovídá vaší externí přístupové URL, včetně `https`, pokud je SSL povoleno.
+
+2. **Zkontrolujte nastavení reverzní proxy:**
+
+   * Potvrďte, že vaše reverzní proxy správně směruje požadavky na server CMS.
+   * Ujistěte se, že záhlaví jako `X-Forwarded-For` a `X-Forwarded-Proto` jsou správně nastaveny.
+
+3. **Restartujte služby:**
+
+   Po provedení změn restartujte jak reverzní proxy, tak kontejnery CMS.
+
+#### Error when uploading an image - permission denied
+
+Switching the data folder ownership on the host from root to another user and group resolves this problem.
+
+## Získání pomoci
+
+Pokud se setkáte s problémy, které tento průvodce nepokrývá:
+
+* Zkontrolujte protokoly:
+
+  View container logs for error messages:
+
+  ```bash
+  docker compose logs
+  ```
+
+* Podpora komunity:
+
+  Obraťte se na [komunitu CMS](https://github.com/cmshq/cms/issues) nebo [podpůrné kanály](https://discord.gg/cx5n4Jzs57) pro pomoc.

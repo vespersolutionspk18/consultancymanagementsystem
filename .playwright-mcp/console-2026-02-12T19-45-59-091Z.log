@@ -1,0 +1,48 @@
+[    7114ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/microsoft.com:0
+[    7114ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/google.com:0
+[    7114ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/facebook.com:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/anthropic.com:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/netflix.com:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/libeo.io:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/claap.io:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/algolia.com:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/airbnb.com:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/samsung.com:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/wework.com:0
+[    7115ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/hasura.io:0
+[    7130ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/linkedin.com:0
+[ 2045415ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/microsoft.com:0
+[ 2045415ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/netflix.com:0
+[ 2045415ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/google.com:0
+[ 2045415ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/facebook.com:0
+[ 2045415ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/anthropic.com:0
+[ 2045415ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/libeo.io:0
+[ 2045418ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/claap.io:0
+[ 2045419ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/hasura.io:0
+[ 2045419ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/airbnb.com:0
+[ 2045419ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/algolia.com:0
+[ 2045419ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/samsung.com:0
+[ 2045419ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/wework.com:0
+[ 2045438ms] [ERROR] ApolloError: Token invalid.
+    at new ApolloError2 (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-2WD4W5OU.js?v=08df7387:47:28)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-W4MV5Z3T.js?v=08df7387:5760:41
+    at both (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3228:17)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3217:26
+    at new Promise (<anonymous>)
+    at Object.then (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3216:16)
+    at Object.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3230:39)
+    at notifySubscription (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2602:18)
+    at onNotify (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2640:3)
+    at SubscriptionObserver2.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2695:9) @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/@blocknote_mantine.js?v=08df7387:3192
+[ 2045439ms] [ERROR] ApolloError: Token invalid.
+    at new ApolloError2 (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-2WD4W5OU.js?v=08df7387:47:28)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-W4MV5Z3T.js?v=08df7387:5760:41
+    at both (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3228:17)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3217:26
+    at new Promise (<anonymous>)
+    at Object.then (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3216:16)
+    at Object.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3230:39)
+    at notifySubscription (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2602:18)
+    at onNotify (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2640:3)
+    at SubscriptionObserver2.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2695:9) @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/@blocknote_mantine.js?v=08df7387:3192
+[ 2045439ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/linkedin.com:0

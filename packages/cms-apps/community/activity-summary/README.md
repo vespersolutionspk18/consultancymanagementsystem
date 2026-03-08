@@ -1,0 +1,108 @@
+# CMS CRM Activity Reporter ��
+
+A TypeScript-based reporting bot that summarizes activity from your CMS CRM workspace and sends daily/periodic reports to Slack, Discord, and WhatsApp. Meet Kylian Mbaguette, your friendly CRM activity reporter!
+
+## Features
+
+- 🧑‍💻 **People & Company Tracking**: Summarizes newly created people and companies
+- 🎯 **Opportunity Monitoring**: Reports on new opportunities created, broken down by stage
+- ✅ **Task Analytics**:
+  - Tracks task creation
+  - Calculates on-time completion rates
+  - Identifies team members with the most overdue tasks (the "slackers")
+- 🔔 **Multi-Platform Notifications**: Send reports to Slack, Discord, and/or WhatsApp
+- ⏰ **Configurable Time Range**: Look back any number of days
+
+## Prerequisites
+
+- Node.js (v14 or higher recommended)
+- TypeScript
+- A [CMS CRM](https://cms.com) account with API access
+- Optional: Slack webhook, Discord webhook, and/or WhatsApp Business API access
+
+## Installing dependencies
+```bash
+# Install dependencies
+yarn install
+```
+
+### Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `CMS_API_KEY` | ✅ Yes | Your CMS CRM API key |
+| `DAYS_AGO` | ✅ Yes | Number of days to look back for the report |
+| `SLACK_HOOK_URL` | ❌ No | Slack incoming webhook URL |
+| `DISCORD_WEBHOOK_URL` | ❌ No | Discord webhook URL |
+| `FB_GRAPH_TOKEN` | ❌ No | Facebook Graph API token for WhatsApp |
+| `WHATSAPP_RECIPIENT_PHONE_NUMBER` | ❌ No | WhatsApp recipient phone number (with country code) |
+
+## Project Structure
+```
+.
+├── index.ts                              # Main entry point
+├── people-creation-summariser.ts         # Summarizes people/company creation
+├── opportunity-creation-summariser.ts    # Summarizes opportunity creation
+├── task-creation-summariser.ts           # Summarizes task creation & completion
+├── senders.ts                            # Handles sending to Slack/Discord/WhatsApp
+├── utils.ts                              # API request utility
+└── README.md
+```
+
+## How It Works
+
+1. **Data Collection**: The bot queries the CMS CRM API for activities within the specified time range
+2. **Analysis**:
+   - Counts new people and companies
+   - Categorizes opportunities by stage
+   - Calculates task completion rates and identifies overdue tasks
+3. **Reporting**: Formats the data into friendly messages
+4. **Distribution**: Sends reports to configured platforms (Slack, Discord, WhatsApp)
+
+## Report Format
+
+Each report includes:
+```
+Bonjour! 🥖 Je m'appelle Kylian Mbaguette. Over the last X days:
+
+🧑‍💻 People & Companies
+- X People and Y Companies were added
+
+🎯 Opportunities
+- X Opportunities were added: Y in NEW, Z in PROPOSAL
+
+📋 Tasks
+- X Tasks were created
+- Y% Tasks were completed on time
+- [Name] slacked the most with Z Tasks overdue
+```
+
+## API Integration
+
+This bot uses the [CMS CRM REST API](https://api.cms.com/rest/). The following endpoints are used:
+
+- `GET /people` - Fetch people data
+- `GET /opportunities` - Fetch opportunity data
+- `GET /tasks` - Fetch task data
+- `GET /workspaceMembers/{id}` - Fetch workspace member details
+
+## Notes
+
+- The "slacker" detection is lighthearted and identifies team members with the most overdue tasks
+- At least one messaging platform must be configured for the bot to send reports
+- The bot uses ISO date format (YYYY-MM-DD) for date filtering
+- Task completion percentage only considers incomplete tasks (excludes already completed tasks from the calculation)
+
+## Troubleshooting
+
+**Issue**: No messages being sent
+- **Solution**: Ensure at least one messaging platform is configured with valid credentials
+
+**Issue**: API authentication errors
+- **Solution**: Verify your `CMS_API_KEY` is correct and has necessary permissions
+
+**Issue**: WhatsApp messages not sending
+- **Solution**: Ensure both `FB_GRAPH_TOKEN` and `WHATSAPP_RECIPIENT_PHONE_NUMBER` are set correctly
+
+## Contributing
+Built with ❤️ and 🥖 by Azmat, Ali and Mike from 9dots

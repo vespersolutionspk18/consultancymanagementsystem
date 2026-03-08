@@ -1,0 +1,139 @@
+Total messages: 117 (Errors: 28, Warnings: 0)
+
+[DEBUG] [vite] connecting... @ http://localhost:3001/@vite/client:732
+[DEBUG] [vite] connected. @ http://localhost:3001/@vite/client:826
+[INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-I476ZSYT.js?v=08df7387:21608
+[LOG] I18nProvider rendered `null`. A call to `i18n.activate` needs to happen in order for translations to be activated and for the I18nProvider to render.This is not an error but an informational message logged only in development. @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/@lingui_react.js?v=08df7387:182
+ApolloError: Could not find flat entity in maps
+    at new ApolloError2 (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-2WD4W5OU.js?v=08df7387:47:28)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-W4MV5Z3T.js?v=08df7387:5760:41
+    at both (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3228:17)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3217:26
+    at new Promise (<anonymous>)
+    at Object.then (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3216:16)
+    at Object.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3230:39)
+    at notifySubscription (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2602:18)
+    at onNotify (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2640:3)
+    at SubscriptionObserver2.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2695:9)
+[LOG] Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-TIVHXDIG.js?v=08df7387:18
+[DEBUG] [vite] connecting... @ http://localhost:3001/@vite/client:732
+[DEBUG] [vite] connected. @ http://localhost:3001/@vite/client:826
+[INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-I476ZSYT.js?v=08df7387:21608
+[LOG] I18nProvider rendered `null`. A call to `i18n.activate` needs to happen in order for translations to be activated and for the I18nProvider to render.This is not an error but an informational message logged only in development. @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/@lingui_react.js?v=08df7387:182
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/libeo.io:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/facebook.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/netflix.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/microsoft.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/google.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/anthropic.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/algolia.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/wework.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/airbnb.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/claap.io:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/samsung.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/hasura.io:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/linkedin.com:0
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-TIVHXDIG.js?v=08df7387:18
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[DEBUG] [vite] hot updated: /src/pages/onboarding/CreateWorkspace.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/object-metadata/components/ObjectMetadataItemsLoadEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/components/VerifyEmailEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/auth/PasswordReset.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/components/VerifyLoginTokenEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/auth/SignInUp.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWorkspaceScopeFormEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/SignInUpWorkspaceScopeForm.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithCredentials.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpGlobalScopeFormEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationVerification.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/onboarding/internal/ChooseYourPlanContent.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithGoogle.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithMicrosoft.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/settings/components/SettingsNavigationDrawerItems.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/onboarding/CreateWorkspace.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/object-metadata/components/ObjectMetadataItemsLoadEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/components/VerifyEmailEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/auth/PasswordReset.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/components/VerifyLoginTokenEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/auth/SignInUp.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWorkspaceScopeFormEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/SignInUpWorkspaceScopeForm.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithCredentials.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpGlobalScopeFormEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationVerification.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/onboarding/internal/ChooseYourPlanContent.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithGoogle.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithMicrosoft.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/settings/components/SettingsNavigationDrawerItems.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/onboarding/CreateWorkspace.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/object-metadata/components/ObjectMetadataItemsLoadEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/components/VerifyEmailEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/auth/PasswordReset.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/components/VerifyLoginTokenEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/auth/SignInUp.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWorkspaceScopeFormEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/SignInUpWorkspaceScopeForm.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithCredentials.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpGlobalScopeFormEffect.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpTwoFactorAuthenticationVerification.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/pages/onboarding/internal/ChooseYourPlanContent.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithGoogle.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/auth/sign-in-up/components/internal/SignInUpWithMicrosoft.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/settings/components/SettingsNavigationDrawerItems.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx @ http://localhost:3001/@vite/client:809
+[DEBUG] [vite] hot updated: /src/modules/app/effect-components/PageChangeEffect.tsx @ http://localhost:3001/@vite/client:809
+[LOG] [DEBUG] PageChangeEffect: navigateLocation= /objects/companies redirectEnabled= false path= /welcome @ http://localhost:3001/src/modules/app/effect-components/PageChangeEffect.tsx?t=1771069667102:104
+ApolloError: Internal Server Error
+    at new ApolloError2 (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-2WD4W5OU.js?v=08df7387:47:28)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-W4MV5Z3T.js?v=08df7387:5155:29
+    at both (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3228:17)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3217:26
+    at new Promise (<anonymous>)
+    at Object.then (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3216:16)
+    at Object.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3230:39)
+    at notifySubscription (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2602:18)
+    at onNotify (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2640:3)
+    at SubscriptionObserver2.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2695:9)
+[DEBUG] [vite] connecting... @ http://localhost:3001/@vite/client:732
+[DEBUG] [vite] connected. @ http://localhost:3001/@vite/client:826
+[INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-I476ZSYT.js?v=08df7387:21608
+[LOG] I18nProvider rendered `null`. A call to `i18n.activate` needs to happen in order for translations to be activated and for the I18nProvider to render.This is not an error but an informational message logged only in development. @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/@lingui_react.js?v=08df7387:182
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] [DEBUG] PageChangeEffect: navigateLocation= undefined redirectEnabled= true path= /welcome @ http://localhost:3001/src/modules/app/effect-components/PageChangeEffect.tsx?t=1771069667102:104
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/anthropic.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/google.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/claap.io:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/algolia.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/samsung.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/airbnb.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/hasura.io:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/wework.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/netflix.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/libeo.io:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/microsoft.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/facebook.com:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/linkedin.com:0
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] tokenPair is undefined @ http://localhost:3001/src/modules/apollo/utils/getTokenPair.ts:7
+[LOG] Download the Apollo DevTools for a better development experience: %s https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-TIVHXDIG.js?v=08df7387:18
+[LOG] [DEBUG] PageChangeEffect: navigateLocation= undefined redirectEnabled= false path= /welcome @ http://localhost:3001/src/modules/app/effect-components/PageChangeEffect.tsx?t=1771069667102:104
+[LOG] [DEBUG] PageChangeEffect: navigateLocation= /objects/companies redirectEnabled= false path= /welcome @ http://localhost:3001/src/modules/app/effect-components/PageChangeEffect.tsx?t=1771069667102:104
+[LOG] [DEBUG] refreshObjectMetadataItems: starting query @ http://localhost:3001/src/modules/object-metadata/hooks/useRefreshObjectMetadataItems.ts?t=1771069657345:14

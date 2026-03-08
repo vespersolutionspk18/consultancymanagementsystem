@@ -1,0 +1,5 @@
+Contact: https://github.com/cmshq/cms/issues/new
+Contact: security@cms.com
+Preferred-Languages: en
+Canonical: https://cms.com/.well-known/security.txt
+Policy: https://github.com/cmshq/cms/security/policy

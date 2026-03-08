@@ -1,0 +1,14 @@
+[   10595ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/client-config:0
+[   11214ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/metadata:0
+[   16411ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/metadata:0
+[   16427ms] ApolloError: Failed to fetch
+    at new ApolloError2 (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-2WD4W5OU.js?v=254309e2:47:28)
+    at Object.error (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-W4MV5Z3T.js?v=254309e2:5207:65)
+    at notifySubscription (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=254309e2:2606:18)
+    at onNotify (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=254309e2:2640:3)
+    at SubscriptionObserver2.error (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=254309e2:2698:9)
+    at Object.error (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=254309e2:3236:24)
+    at notifySubscription (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=254309e2:2606:18)
+    at onNotify (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=254309e2:2640:3)
+    at SubscriptionObserver2.error (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=254309e2:2698:9)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=254309e2:3200:23

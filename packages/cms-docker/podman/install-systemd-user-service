@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+mkdir -p ~/.config/systemd/user
+[ -f cmscrm.service ] || { echo "Error: cmscrm.service not found"; exit 1; }
+cp cmscrm.service ~/.config/systemd/user
+
+
+systemctl --user daemon-reload
+systemctl --user enable cmscrm.service
+systemctl --user start cmscrm.service

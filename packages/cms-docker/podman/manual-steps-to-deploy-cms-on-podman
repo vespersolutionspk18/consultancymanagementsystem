@@ -1,0 +1,71 @@
+#!/bin/bash
+set -e
+if [ ! -f "$(dirname "$0")/.env" ]; then
+    echo "Error: .env file not found"
+    exit 1
+fi
+source "$(dirname "$0")/.env"
+
+## steps to cleanup and start over from scratch - useful when testing
+#podman pod stop cms-pod
+#podman pod rm cms-pod
+#podman volume rm cms-db-data cms-server-data cms-redis-data
+# end of cleanup
+
+podman volume create cms-db-data
+podman volume create cms-server-data
+podman volume create cms-redis-data
+
+podman pod create --name cms-pod -p 127.0.0.1:8080:3000
+
+podman run -d --pod cms-pod --name cms-db \
+  -e POSTGRES_DB=cms \
+  -e POSTGRES_USER=cms \
+  -e POSTGRES_PASSWORD="$POSTGRES_PASSWORD" \
+  -v cms-db-data:/var/lib/postgresql/data:Z \
+  docker.io/library/postgres:16
+
+podman run -d --pod cms-pod --name cms-redis \
+  -v cms-redis-data:/data:Z \
+  docker.io/library/redis:latest
+
+podman run -d --pod cms-pod --name cms-server \
+  -e NODE_PORT=3000 \
+  -e SERVER_URL="$SERVER_URL" \
+  -e PG_DATABASE_URL="postgresql://cms:$POSTGRES_PASSWORD@cms-db:5432/cms" \
+  -e REDIS_URL="redis://cms-redis:6379" \
+  -e APP_SECRET="$APP_SECRET" \
+  -e NODE_ENV=production \
+  -e LOG_LEVEL=info \
+  -v cms-server-data:/app/docker-data:Z \
+  docker.io/cmscrm/cms:latest
+
+podman run -d --pod cms-pod --name cms-worker \
+  --init \
+  -e SERVER_URL="$SERVER_URL" \
+  -e PG_DATABASE_URL="postgresql://cms:$POSTGRES_PASSWORD@cms-db:5432/cms" \
+  -e REDIS_URL="redis://cms-redis:6379" \
+  -e APP_SECRET="$APP_SECRET" \
+  -e DISABLE_DB_MIGRATIONS=true \
+  -e NODE_ENV=production \
+  -e LOG_LEVEL=info \
+  -v cms-server-data:/app/docker-data:Z \
+  docker.io/cmscrm/cms:latest \
+  yarn worker:prod
+
+# wait some time, check status
+sleep 30
+podman ps --pod -f name=cms-pod
+
+
+mkdir -p ~/.config/systemd/user
+if [ ! -f "cmscrm.service" ]; then
+    echo "Error: cmscrm.service file not found"
+    exit 1
+fi
+cp cmscrm.service ~/.config/systemd/user
+
+systemctl --user daemon-reload
+systemctl --user enable cmscrm.service
+systemctl --user start cmscrm.service
+

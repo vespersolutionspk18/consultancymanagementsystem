@@ -1,0 +1,97 @@
+/* @license Enterprise */
+
+import { Injectable, Logger } from '@nestjs/common';
+
+import type Stripe from 'stripe';
+
+import { type BillingMeterEventName } from 'src/engine/core-modules/billing/enums/billing-meter-event-names';
+import { type BillingDimensions } from 'src/engine/core-modules/billing/types/billing-dimensions.type';
+import { StripeSDKService } from 'src/engine/core-modules/billing/stripe/stripe-sdk/services/stripe-sdk.service';
+import { CMSConfigService } from 'src/engine/core-modules/cms-config/cms-config.service';
+
+@Injectable()
+export class StripeBillingMeterEventService {
+  protected readonly logger = new Logger(StripeBillingMeterEventService.name);
+  private readonly stripe: Stripe;
+
+  constructor(
+    private readonly cmsConfigService: CMSConfigService,
+    private readonly stripeSDKService: StripeSDKService,
+  ) {
+    if (!this.cmsConfigService.get('IS_BILLING_ENABLED')) {
+      return;
+    }
+    this.stripe = this.stripeSDKService.getStripe(
+      this.cmsConfigService.get('BILLING_STRIPE_API_KEY'),
+    );
+  }
+
+  async sendBillingMeterEvent({
+    eventName,
+    value,
+    stripeCustomerId,
+    dimensions,
+  }: {
+    eventName: BillingMeterEventName;
+    value: number;
+    stripeCustomerId: string;
+    dimensions?: BillingDimensions;
+  }) {
+    const payload: Record<string, string> = {
+      value: value.toString(),
+      stripe_customer_id: stripeCustomerId,
+    };
+
+    if (dimensions) {
+      payload.execution_type = dimensions.execution_type;
+
+      if (dimensions.resource_id !== undefined) {
+        payload.resource_id = dimensions.resource_id || 'none';
+      }
+
+      if (dimensions.execution_context_1 !== undefined) {
+        payload.execution_context_1 = dimensions.execution_context_1 || 'none';
+      }
+    }
+
+    await this.stripe.billing.meterEvents.create({
+      event_name: eventName,
+      payload,
+    });
+  }
+
+  async sumMeterEvents(
+    stripeMeterId: string,
+    stripeCustomerId: string,
+    startTime: Date,
+    endTime: Date,
+  ) {
+    const eventSummaries = await this.stripe.billing.meters.listEventSummaries(
+      stripeMeterId,
+      {
+        customer: stripeCustomerId,
+        start_time: Math.floor(startTime.getTime() / (1000 * 60)) * 60,
+        end_time: Math.ceil(endTime.getTime() / (1000 * 60)) * 60,
+      },
+    );
+
+    return eventSummaries.data.reduce((acc, eventSummary) => {
+      return acc + eventSummary.aggregated_value;
+    }, 0);
+  }
+
+  async getTotalCumulativeUsage(
+    stripeMeterId: string,
+    stripeCustomerId: string,
+  ): Promise<number> {
+    const startTime = new Date(0);
+    const endTime = new Date();
+
+    return this.sumMeterEvents(
+      stripeMeterId,
+      stripeCustomerId,
+      startTime,
+      endTime,
+    );
+  }
+}

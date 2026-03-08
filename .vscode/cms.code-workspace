@@ -1,0 +1,110 @@
+{
+  "folders": [
+    {
+      "name": "ROOT",
+      "path": "../"
+    },
+    {
+      "name": "packages/cms-docker",
+      "path": "../packages/cms-docker"
+    },
+    {
+      "name": "packages/cms-front",
+      "path": "../packages/cms-front"
+    },
+    {
+      "name": "packages/cms-ui",
+      "path": "../packages/cms-ui"
+    },
+    {
+      "name": "packages/cms-emails",
+      "path": "../packages/cms-emails"
+    },
+    {
+      "name": "packages/cms-shared",
+      "path": "../packages/cms-shared"
+    },
+    {
+      "name": "packages/cms-server",
+      "path": "../packages/cms-server"
+    },
+    {
+      "name": "packages/cms-utils",
+      "path": "../packages/cms-utils"
+    },
+    {
+      "name": "packages/cms-zapier",
+      "path": "../packages/cms-zapier"
+    },
+    {
+      "name": "tools/eslint-rules",
+      "path": "../tools/eslint-rules"
+    },
+    {
+      "name": "packages/cms-e2e-testing",
+      "path": "../packages/cms-e2e-testing"
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": false,
+    "files.eol": "auto",
+    "[typescript]": {
+      "editor.formatOnSave": false,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.addMissingImports": "always"
+      }
+    },
+    "[javascript]": {
+      "editor.formatOnSave": false,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.addMissingImports": "always"
+      }
+    },
+    "[typescriptreact]": {
+      "editor.formatOnSave": false,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.addMissingImports": "always"
+      }
+    },
+    "[json]": {
+      "editor.formatOnSave": true
+    },
+    "javascript.format.enable": false,
+    "typescript.format.enable": false,
+    "cSpell.enableFiletypes": [
+      "!javascript",
+      "!json",
+      "!typescript",
+      "!typescriptreact",
+      "md",
+      "mdx"
+    ],
+    "cSpell.words": [
+      "cmshq"
+    ],
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "[javascript][typescript][typescriptreact]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.addMissingImports": "always"
+      }
+    },
+    "search.exclude": {
+      "**/.yarn": true,
+    },
+    "files.exclude": {
+      "packages/": true
+    },
+    "jest.runMode": "on-demand",
+    "jest.disabledWorkspaceFolders": [
+      "ROOT",
+      "packages/cms-zapier",
+      "packages/cms-docker",
+      "packages/cms-utils",
+      "packages/cms-postgres"
+    ]
+  }
+}

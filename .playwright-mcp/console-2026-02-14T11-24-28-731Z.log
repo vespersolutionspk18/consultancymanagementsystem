@@ -1,0 +1,20 @@
+[    4025ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/anthropic.com:0
+[    4025ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/netflix.com:0
+[    4025ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/microsoft.com:0
+[    4026ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/facebook.com:0
+[    4026ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/google.com:0
+[    4026ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/samsung.com:0
+[    4028ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/airbnb.com:0
+[    4028ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/hasura.io:0
+[    4029ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/wework.com:0
+[    4029ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/algolia.com:0
+[    4029ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/libeo.io:0
+[    4029ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/claap.io:0
+[    4034ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cms-icons.com/linkedin.com:0
+[  253978ms] [ERROR] useFindManyRecords for "favorites" error : ApolloError: Cannot query field "pet" on type "Favorite".
+Cannot query field "petId" on type "Favorite". Did you mean "id", "noteId", or "viewId"?
+Cannot query field "rocket" on type "Favorite".
+Cannot query field "rocketId" on type "Favorite". Did you mean "noteId" or "projectId"?
+Cannot query field "surveyResult" on type "Favorite".
+Cannot query field "surveyResultId" on type "Favorite".
+Cannot query field "view" on type "Favorite". Did you mean "viewId"? @ http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/@blocknote_mantine.js?v=08df7387:3192

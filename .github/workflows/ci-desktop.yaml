@@ -1,0 +1,483 @@
+name: CI Desktop Build
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/cms-desktop/**'
+      - 'packages/cms-front/**'
+      - 'packages/cms-server/**'
+      - 'packages/cms-ui/**'
+      - 'packages/cms-shared/**'
+      - 'scripts/build-backend-binary.sh'
+      - '.github/workflows/ci-desktop.yaml'
+  pull_request:
+    paths:
+      - 'packages/cms-desktop/**'
+      - 'packages/cms-front/**'
+      - 'packages/cms-server/**'
+      - 'packages/cms-ui/**'
+      - 'packages/cms-shared/**'
+      - 'scripts/build-backend-binary.sh'
+      - '.github/workflows/ci-desktop.yaml'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Build target platform'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - macos-arm64
+          - macos-x64
+          - windows-x64
+      release:
+        description: 'Create release artifacts'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  NODE_VERSION: '24'
+  RUST_VERSION: 'stable'
+  NODE_OPTIONS: '--max-old-space-size=8192'
+
+jobs:
+  # Build frontend (shared by all platforms)
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        uses: ./.github/actions/yarn-install
+
+      - name: Build shared packages
+        run: |
+          npx nx build cms-shared
+          npx nx build cms-ui
+
+      - name: Write frontend .env
+        run: |
+          cat > packages/cms-front/.env << 'EOF'
+          REACT_APP_SERVER_BASE_URL=http://localhost:3000
+          VITE_DISABLE_TYPESCRIPT_CHECKER=true
+          VITE_DISABLE_ESLINT_CHECKER=true
+          EOF
+
+      - name: Build frontend
+        run: npx nx build cms-front
+
+      - name: Upload frontend build
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-build
+          path: packages/cms-front/build
+          retention-days: 7
+
+  # Build backend binary for macOS ARM64
+  build-backend-macos-arm64:
+    name: Build Backend (macOS ARM64)
+    runs-on: macos-14
+    timeout-minutes: 45
+    if: |
+      github.event.inputs.target == 'all' ||
+      github.event.inputs.target == 'macos-arm64' ||
+      github.event.inputs.target == ''
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install pkg
+        run: npm install -g @yao-pkg/pkg
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build server
+        run: npx nx build cms-server
+
+      - name: Build backend binary
+        run: |
+          cd packages/cms-server
+          pkg dist/src/main.js \
+            --targets node18-macos-arm64 \
+            --output ../cms-desktop/binaries/cms-server-aarch64-apple-darwin \
+            --compress GZip \
+            --config package.json
+
+      - name: Verify binary
+        run: |
+          ls -la packages/cms-desktop/binaries/
+          file packages/cms-desktop/binaries/cms-server-aarch64-apple-darwin
+
+      - name: Upload backend binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-macos-arm64
+          path: packages/cms-desktop/binaries/cms-server-aarch64-apple-darwin
+          retention-days: 7
+
+  # Build backend binary for macOS x64
+  build-backend-macos-x64:
+    name: Build Backend (macOS x64)
+    runs-on: macos-13
+    timeout-minutes: 45
+    if: |
+      github.event.inputs.target == 'all' ||
+      github.event.inputs.target == 'macos-x64'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install pkg
+        run: npm install -g @yao-pkg/pkg
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build server
+        run: npx nx build cms-server
+
+      - name: Build backend binary
+        run: |
+          cd packages/cms-server
+          pkg dist/src/main.js \
+            --targets node18-macos-x64 \
+            --output ../cms-desktop/binaries/cms-server-x86_64-apple-darwin \
+            --compress GZip \
+            --config package.json
+
+      - name: Verify binary
+        run: |
+          ls -la packages/cms-desktop/binaries/
+          file packages/cms-desktop/binaries/cms-server-x86_64-apple-darwin
+
+      - name: Upload backend binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-macos-x64
+          path: packages/cms-desktop/binaries/cms-server-x86_64-apple-darwin
+          retention-days: 7
+
+  # Build backend binary for Windows x64
+  build-backend-windows-x64:
+    name: Build Backend (Windows x64)
+    runs-on: windows-latest
+    timeout-minutes: 45
+    if: |
+      github.event.inputs.target == 'all' ||
+      github.event.inputs.target == 'windows-x64'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install pkg
+        run: npm install -g @yao-pkg/pkg
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build server
+        run: npx nx build cms-server
+
+      - name: Build backend binary
+        shell: pwsh
+        run: |
+          cd packages/cms-server
+          pkg dist/src/main.js `
+            --targets node18-win-x64 `
+            --output ../cms-desktop/binaries/cms-server-x86_64-pc-windows-msvc.exe `
+            --compress GZip `
+            --config package.json
+
+      - name: Verify binary
+        shell: pwsh
+        run: |
+          Get-ChildItem packages/cms-desktop/binaries/
+
+      - name: Upload backend binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-windows-x64
+          path: packages/cms-desktop/binaries/cms-server-x86_64-pc-windows-msvc.exe
+          retention-days: 7
+
+  # Build Tauri app for macOS ARM64
+  build-tauri-macos-arm64:
+    name: Build Tauri (macOS ARM64)
+    needs: [build-frontend, build-backend-macos-arm64]
+    runs-on: macos-14
+    timeout-minutes: 45
+    if: |
+      github.event.inputs.target == 'all' ||
+      github.event.inputs.target == 'macos-arm64' ||
+      github.event.inputs.target == ''
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: packages/cms-desktop -> target
+
+      - name: Download frontend build
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-build
+          path: packages/cms-front/build
+
+      - name: Download backend binary
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-macos-arm64
+          path: packages/cms-desktop/binaries
+
+      - name: Make binary executable
+        run: chmod +x packages/cms-desktop/binaries/cms-server-aarch64-apple-darwin
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build Tauri app
+        run: |
+          cd packages/cms-desktop
+          yarn tauri build --target aarch64-apple-darwin
+
+      - name: Upload Tauri app
+        uses: actions/upload-artifact@v4
+        with:
+          name: cms-desktop-macos-arm64
+          path: |
+            packages/cms-desktop/target/aarch64-apple-darwin/release/bundle/dmg/*.dmg
+            packages/cms-desktop/target/aarch64-apple-darwin/release/bundle/macos/*.app
+          retention-days: 14
+
+  # Build Tauri app for macOS x64
+  build-tauri-macos-x64:
+    name: Build Tauri (macOS x64)
+    needs: [build-frontend, build-backend-macos-x64]
+    runs-on: macos-13
+    timeout-minutes: 45
+    if: |
+      github.event.inputs.target == 'all' ||
+      github.event.inputs.target == 'macos-x64'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-apple-darwin
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: packages/cms-desktop -> target
+
+      - name: Download frontend build
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-build
+          path: packages/cms-front/build
+
+      - name: Download backend binary
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-macos-x64
+          path: packages/cms-desktop/binaries
+
+      - name: Make binary executable
+        run: chmod +x packages/cms-desktop/binaries/cms-server-x86_64-apple-darwin
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build Tauri app
+        run: |
+          cd packages/cms-desktop
+          yarn tauri build --target x86_64-apple-darwin
+
+      - name: Upload Tauri app
+        uses: actions/upload-artifact@v4
+        with:
+          name: cms-desktop-macos-x64
+          path: |
+            packages/cms-desktop/target/x86_64-apple-darwin/release/bundle/dmg/*.dmg
+            packages/cms-desktop/target/x86_64-apple-darwin/release/bundle/macos/*.app
+          retention-days: 14
+
+  # Build Tauri app for Windows x64
+  build-tauri-windows-x64:
+    name: Build Tauri (Windows x64)
+    needs: [build-frontend, build-backend-windows-x64]
+    runs-on: windows-latest
+    timeout-minutes: 45
+    if: |
+      github.event.inputs.target == 'all' ||
+      github.event.inputs.target == 'windows-x64'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: packages/cms-desktop -> target
+
+      - name: Download frontend build
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-build
+          path: packages/cms-front/build
+
+      - name: Download backend binary
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-windows-x64
+          path: packages/cms-desktop/binaries
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build Tauri app
+        run: |
+          cd packages/cms-desktop
+          yarn tauri build --target x86_64-pc-windows-msvc
+
+      - name: Upload Tauri app
+        uses: actions/upload-artifact@v4
+        with:
+          name: cms-desktop-windows-x64
+          path: |
+            packages/cms-desktop/target/x86_64-pc-windows-msvc/release/bundle/msi/*.msi
+            packages/cms-desktop/target/x86_64-pc-windows-msvc/release/bundle/nsis/*.exe
+          retention-days: 14
+
+  # Create release (only on manual trigger with release option)
+  create-release:
+    name: Create Release
+    needs: [build-tauri-macos-arm64, build-tauri-macos-x64, build-tauri-windows-x64]
+    if: |
+      github.event_name == 'workflow_dispatch' &&
+      github.event.inputs.release == 'true' &&
+      github.event.inputs.target == 'all'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-artifacts
+
+      - name: List artifacts
+        run: find release-artifacts -type f
+
+      - name: Get version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./packages/cms-desktop/package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: desktop-v${{ steps.version.outputs.version }}
+          name: CMS Desktop v${{ steps.version.outputs.version }}
+          draft: true
+          prerelease: true
+          files: |
+            release-artifacts/cms-desktop-macos-arm64/**/*
+            release-artifacts/cms-desktop-macos-x64/**/*
+            release-artifacts/cms-desktop-windows-x64/**/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Status check job
+  ci-desktop-status-check:
+    name: Desktop CI Status
+    if: always() && !cancelled()
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    needs:
+      - build-frontend
+      - build-backend-macos-arm64
+      - build-tauri-macos-arm64
+    steps:
+      - name: Check status
+        if: contains(needs.*.result, 'failure')
+        run: |
+          echo "One or more jobs failed"
+          exit 1
+      - name: All checks passed
+        run: echo "All desktop CI checks passed!"

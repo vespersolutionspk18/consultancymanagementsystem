@@ -1,0 +1,11 @@
+[   11305ms] ApolloError: Could not find flat entity in maps
+    at new ApolloError2 (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-2WD4W5OU.js?v=08df7387:47:28)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-W4MV5Z3T.js?v=08df7387:5760:41
+    at both (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3228:17)
+    at http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3217:26
+    at new Promise (<anonymous>)
+    at Object.then (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3216:16)
+    at Object.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:3230:39)
+    at notifySubscription (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2602:18)
+    at onNotify (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2640:3)
+    at SubscriptionObserver2.next (http://localhost:3001/@fs/Users/mac/Downloads/ECGGroup/NexusMinds/codeprojects/cms/node_modules/.vite/packages/cms-front/deps/chunk-BQBPSZZU.js?v=08df7387:2695:9)

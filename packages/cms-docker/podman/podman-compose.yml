@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: cms-db
+    image: postgres:16
+    environment:
+      POSTGRES_DB: cms
+      POSTGRES_USER: cms
+      POSTGRES_PASSWORD: ${PG_DATABASE_PASSWORD}
+    volumes:
+      - cms-db-data:/var/lib/postgresql/data:Z
+
+  redis:
+    container_name: cms-redis
+    image: redis:latest
+    command: ["--maxmemory-policy", "noeviction"]
+    volumes:
+      - cms-redis-data:/data:Z
+
+  server:
+    container_name: cms-server
+    image: cmscrm/cms:latest
+    environment:
+      NODE_PORT: "3000"
+      SERVER_URL: ${SERVER_URL}
+      PG_DATABASE_URL: "postgresql://cms:${PG_DATABASE_PASSWORD}@cms-db:5432/cms"
+      REDIS_URL: "redis://cms-redis:6379"
+      APP_SECRET: ${APP_SECRET}
+      NODE_ENV: production
+      LOG_LEVEL: info
+    volumes:
+      - cms-server-data:/app/docker-data:Z
+    ports:
+      - 127.0.0.1:8080:3000
+
+  worker:
+    container_name: cms-worker
+    image: cmscrm/cms:latest
+    command: yarn worker:prod
+    environment:
+      SERVER_URL: ${SERVER_URL}
+      PG_DATABASE_URL: "postgresql://cms:${PG_DATABASE_PASSWORD}@cms-db:5432/cms"
+      REDIS_URL: "redis://cms-redis:6379"
+      APP_SECRET: ${APP_SECRET}
+      DISABLE_DB_MIGRATIONS: "true"
+      NODE_ENV: production
+      LOG_LEVEL: info
+    volumes:
+      - cms-server-data:/app/docker-data:Z
+    init: true
+
+volumes:
+  cms-db-data:
+  cms-server-data:
+  cms-redis-data:

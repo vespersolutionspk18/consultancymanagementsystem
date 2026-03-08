@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest", "node"],
+    "baseUrl": "../..",
+    "paths": {
+      "@/*": ["./packages/cms-front/src/modules/*"],
+      "~/*": ["./packages/cms-front/src/*"]
+    }
+  },
+  "include": [
+    "**/__mocks__/**/*",
+    "**/__tests__/**/*",
+    "jest.config.mjs",
+    "setupTests.ts",
+    "src/**/*.d.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/testing/**/*",
+    "tsup.config.ts",
+    "tsup.ui.index.tsx",
+    "vite.config.ts"
+  ]
+}
