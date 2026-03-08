@@ -713,6 +713,7 @@ msgstr "活动同步"
 #. js-lingui-id: m16xKo
 #: src/pages/settings/ai/components/SettingsAgentEvalsTab.tsx
 #: src/modules/settings/integrations/components/SettingsIntegrationComponent.tsx
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
 msgid "Add"
 msgstr "添加"
 
@@ -720,6 +721,12 @@ msgstr "添加"
 #: src/modules/settings/data-model/fields/forms/select/components/AddSelectOptionMenuItem.tsx
 msgid "Add \"{trimmedName}\" to options"
 msgstr "将 \"{trimmedName}\" 添加到选项中"
+
+#. js-lingui-id: 3nLdaX
+#. placeholder {0}: configuration.title || 'record'
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "Add {0}"
+msgstr ""
 
 #. js-lingui-id: 9CHcSG
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateNoRecordFoundForFilter.tsx
@@ -1571,7 +1578,6 @@ msgstr ""
 #: src/pages/settings/applications/SettingsApplications.tsx
 #: src/pages/settings/applications/SettingsApplicationDetails.tsx
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useSettingsRolePermissionFlagConfig.ts
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Applications"
 msgstr "应用程序"
 
@@ -2021,7 +2027,7 @@ msgstr ""
 msgid "Bullet List"
 msgstr ""
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: pOpMDK
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "By using CMS, you agree to the"
 msgstr "使用 CMS 即表示您同意"
@@ -2298,7 +2304,7 @@ msgstr "检查您的电子邮件"
 msgid "Check your inbox to verify your new email address."
 msgstr "请检查收件箱以验证您的新电子邮件地址。"
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: tKmnRP
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
 msgid "Checkout session error. Please retry or contact CMS team"
 msgstr "结账会话错误。请重试或联系 CMS 团队"
@@ -2446,6 +2452,11 @@ msgstr "关闭横幅"
 #: src/modules/ui/layout/page-header/components/PageHeaderToggleCommandMenuButton.tsx
 msgid "Close command menu"
 msgstr "关闭命令菜单"
+
+#. js-lingui-id: 0xuMMg
+#: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
+msgid "CMS fields"
+msgstr "CMS 字段"
 
 #. js-lingui-id: EWPtMO
 #: src/modules/workflow/workflow-steps/workflow-actions/code-action/components/WorkflowEditActionServerlessFunction.tsx
@@ -3964,8 +3975,6 @@ msgstr "不导入"
 #. js-lingui-id: TvY/XA
 #: src/pages/settings/workspace/SettingsApiWebhooks.tsx
 #: src/pages/settings/developers/api-keys/SettingsApiKeys.tsx
-#: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Documentation"
 msgstr "文档"
 
@@ -4774,7 +4783,7 @@ msgstr "取消计量等级切换时出错。"
 msgid "Error while cancelling plan switching."
 msgstr "取消计划切换时出错。"
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: DFH3/h
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
 msgid "Error while ending trial period. Please contact CMS team."
 msgstr "结束试用期时发生错误。请联系CMS团队。"
@@ -5658,16 +5667,16 @@ msgstr "前往草稿"
 msgid "Go to Notes"
 msgstr "前往笔记"
 
-#. js-lingui-id: buPcNi
-#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
-msgid "Go to Opportunities"
-msgstr "前往机会"
-
 #. js-lingui-id: MrE/Qb
 #: src/modules/action-menu/mock/action-menu-actions.mock.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Go to People"
 msgstr "前往人员"
+
+#. js-lingui-id: aKznJS
+#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
+msgid "Go to Projects"
+msgstr ""
 
 #. js-lingui-id: iS69s6
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
@@ -6929,6 +6938,7 @@ msgstr "正在加载会话"
 #: src/pages/settings/emailing-domains/SettingsEmailingDomainDetail.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminVersionDisplay.tsx
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
 #: src/modules/activities/timeline-activities/rows/message/components/EventCardMessage.tsx
 #: src/modules/activities/timeline-activities/rows/calendar/components/EventCardCalendarEvent.tsx
 msgid "Loading..."
@@ -7962,6 +7972,11 @@ msgstr "尚未为个人对象设置权限。"
 msgid "No record is required to trigger this workflow"
 msgstr "不需要记录即可触发此工作流"
 
+#. js-lingui-id: X8wJTR
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "No records"
+msgstr ""
+
 #. js-lingui-id: EqGTpW
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateReadOnly.tsx
 #: src/modules/object-record/record-picker/components/RecordPickerNoRecordFoundMenuItem.tsx
@@ -8409,11 +8424,6 @@ msgstr "已打开"
 msgid "Operational"
 msgstr "运行正常"
 
-#. js-lingui-id: 4MyDFl
-#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
-msgid "Opportunities"
-msgstr "机会"
-
 #. js-lingui-id: lVa1Xn
 #: src/modules/settings/data-model/fields/forms/select/hooks/useSelectSettingsFormInitialValues.ts
 msgid "Option 1"
@@ -8563,7 +8573,7 @@ msgstr "页面布局选项卡"
 msgid "page layout widget"
 msgstr "页面布局小部件"
 
-#. js-lingui-id: NRvxzv
+#. js-lingui-id: 9z2pHk
 #: src/pages/not-found/NotFound.tsx
 msgid "Page Not Found | CMS"
 msgstr "页面未找到 | CMS"
@@ -8991,6 +9001,11 @@ msgstr "个人资料 - 设置"
 #. js-lingui-id: Szskbr
 #: src/modules/settings/security/components/SettingsSecurityEditableProfileFields.tsx
 msgid "Profile Picture"
+msgstr ""
+
+#. js-lingui-id: +0B+ue
+#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
+msgid "Projects"
 msgstr ""
 
 #. js-lingui-id: W9uQXX
@@ -10881,7 +10896,7 @@ msgstr "与谷歌同步"
 msgid "Sync with Outlook"
 msgstr "与 Outlook 同步"
 
-#. js-lingui-id: +9x4tK
+#. js-lingui-id: fxaqrQ
 #: src/pages/onboarding/SyncEmails.tsx
 msgid "Sync your Emails and Calendar with CMS. Choose your privacy settings."
 msgstr "将您的电子邮件和日历与 CMS 同步。选择您的隐私设置。"
@@ -11151,6 +11166,12 @@ msgstr "主题 "
 #: src/modules/keyboard-shortcut-menu/components/KeyboardShortcutMenuItem.tsx
 msgid "then"
 msgstr "然后"
+
+#. js-lingui-id: 0aWyfo
+#. placeholder {0}: configuration.title || 'records'
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "There are no {0} associated with this record."
+msgstr ""
 
 #. js-lingui-id: l2fWLK
 #: src/modules/activities/files/components/FilesCard.tsx
@@ -11605,11 +11626,6 @@ msgstr ""
 msgid "Turquoise"
 msgstr "绿松石色"
 
-#. js-lingui-id: JnaRPe
-#: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
-msgid "CMS fields"
-msgstr "CMS 字段"
-
 #. js-lingui-id: YIjS4q
 #: src/pages/settings/ai/components/SettingsAgentModelCapabilities.tsx
 msgid "Twitter/X Search"
@@ -11863,7 +11879,6 @@ msgstr "已更新"
 #. js-lingui-id: qIrtcK
 #: src/pages/settings/updates/SettingsUpdates.tsx
 #: src/pages/settings/updates/SettingsUpdates.tsx
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Updates"
 msgstr "更新"
 

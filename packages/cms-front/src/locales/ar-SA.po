@@ -713,6 +713,7 @@ msgstr "المزامنة النشطة"
 #. js-lingui-id: m16xKo
 #: src/pages/settings/ai/components/SettingsAgentEvalsTab.tsx
 #: src/modules/settings/integrations/components/SettingsIntegrationComponent.tsx
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
 msgid "Add"
 msgstr "إضافة"
 
@@ -720,6 +721,12 @@ msgstr "إضافة"
 #: src/modules/settings/data-model/fields/forms/select/components/AddSelectOptionMenuItem.tsx
 msgid "Add \"{trimmedName}\" to options"
 msgstr "أضف \"{trimmedName}\" إلى الخيارات"
+
+#. js-lingui-id: 3nLdaX
+#. placeholder {0}: configuration.title || 'record'
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "Add {0}"
+msgstr ""
 
 #. js-lingui-id: 9CHcSG
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateNoRecordFoundForFilter.tsx
@@ -1571,7 +1578,6 @@ msgstr ""
 #: src/pages/settings/applications/SettingsApplications.tsx
 #: src/pages/settings/applications/SettingsApplicationDetails.tsx
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useSettingsRolePermissionFlagConfig.ts
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Applications"
 msgstr "تطبيقات"
 
@@ -2021,7 +2027,7 @@ msgstr ""
 msgid "Bullet List"
 msgstr ""
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: pOpMDK
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "By using CMS, you agree to the"
 msgstr "باستخدامك CMS، فإنك توافق على"
@@ -2298,7 +2304,7 @@ msgstr "تحقق من بريدك الإلكتروني"
 msgid "Check your inbox to verify your new email address."
 msgstr "تحقق من صندوق الوارد لديك لتأكيد عنوان بريدك الإلكتروني الجديد."
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: tKmnRP
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
 msgid "Checkout session error. Please retry or contact CMS team"
 msgstr "خطأ في جلسة الدفع. يُرجى المحاولة مرة أخرى أو الاتصال بفريق CMS"
@@ -2446,6 +2452,11 @@ msgstr "إغلاق اللافتة"
 #: src/modules/ui/layout/page-header/components/PageHeaderToggleCommandMenuButton.tsx
 msgid "Close command menu"
 msgstr "إغلاق قائمة الأوامر"
+
+#. js-lingui-id: 0xuMMg
+#: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
+msgid "CMS fields"
+msgstr "حقول CMS"
 
 #. js-lingui-id: EWPtMO
 #: src/modules/workflow/workflow-steps/workflow-actions/code-action/components/WorkflowEditActionServerlessFunction.tsx
@@ -3964,8 +3975,6 @@ msgstr "عدم الاستيراد"
 #. js-lingui-id: TvY/XA
 #: src/pages/settings/workspace/SettingsApiWebhooks.tsx
 #: src/pages/settings/developers/api-keys/SettingsApiKeys.tsx
-#: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Documentation"
 msgstr "التوثيق"
 
@@ -4774,7 +4783,7 @@ msgstr "خطأ أثناء إلغاء تبديل الطبقة المقاسة."
 msgid "Error while cancelling plan switching."
 msgstr "خطأ أثناء إلغاء تبديل الخطة."
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: DFH3/h
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
 msgid "Error while ending trial period. Please contact CMS team."
 msgstr "خطأ أثناء إنهاء فترة التجربة، يرجى التواصل مع فريق CMS."
@@ -5658,16 +5667,16 @@ msgstr "اذهب إلى المسودة"
 msgid "Go to Notes"
 msgstr "اذهب إلى الملاحظات"
 
-#. js-lingui-id: buPcNi
-#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
-msgid "Go to Opportunities"
-msgstr "اذهب إلى الفرص"
-
 #. js-lingui-id: MrE/Qb
 #: src/modules/action-menu/mock/action-menu-actions.mock.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Go to People"
 msgstr "اذهب إلى الأشخاص"
+
+#. js-lingui-id: aKznJS
+#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
+msgid "Go to Projects"
+msgstr ""
 
 #. js-lingui-id: iS69s6
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
@@ -6929,6 +6938,7 @@ msgstr "جارٍ تحميل السلسلة"
 #: src/pages/settings/emailing-domains/SettingsEmailingDomainDetail.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminVersionDisplay.tsx
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
 #: src/modules/activities/timeline-activities/rows/message/components/EventCardMessage.tsx
 #: src/modules/activities/timeline-activities/rows/calendar/components/EventCardCalendarEvent.tsx
 msgid "Loading..."
@@ -7962,6 +7972,11 @@ msgstr "لم يتم تعيين أي أذونات للعناصر الفردية."
 msgid "No record is required to trigger this workflow"
 msgstr "لا يتطلب سجل لتفعيل سير العمل هذا"
 
+#. js-lingui-id: X8wJTR
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "No records"
+msgstr ""
+
 #. js-lingui-id: EqGTpW
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateReadOnly.tsx
 #: src/modules/object-record/record-picker/components/RecordPickerNoRecordFoundMenuItem.tsx
@@ -8409,11 +8424,6 @@ msgstr "تم الفتح"
 msgid "Operational"
 msgstr "قيد التشغيل"
 
-#. js-lingui-id: 4MyDFl
-#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
-msgid "Opportunities"
-msgstr "الفرص"
-
 #. js-lingui-id: lVa1Xn
 #: src/modules/settings/data-model/fields/forms/select/hooks/useSelectSettingsFormInitialValues.ts
 msgid "Option 1"
@@ -8563,7 +8573,7 @@ msgstr "علامة تبويب تخطيط الصفحة"
 msgid "page layout widget"
 msgstr "أداة تخطيط الصفحة"
 
-#. js-lingui-id: NRvxzv
+#. js-lingui-id: 9z2pHk
 #: src/pages/not-found/NotFound.tsx
 msgid "Page Not Found | CMS"
 msgstr "الصفحة غير موجودة | CMS"
@@ -8991,6 +9001,11 @@ msgstr "الملف الشخصي - إعدادات"
 #. js-lingui-id: Szskbr
 #: src/modules/settings/security/components/SettingsSecurityEditableProfileFields.tsx
 msgid "Profile Picture"
+msgstr ""
+
+#. js-lingui-id: +0B+ue
+#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
+msgid "Projects"
 msgstr ""
 
 #. js-lingui-id: W9uQXX
@@ -10881,7 +10896,7 @@ msgstr "مزامنة مع جوجل"
 msgid "Sync with Outlook"
 msgstr "مزامنة مع Outlook"
 
-#. js-lingui-id: +9x4tK
+#. js-lingui-id: fxaqrQ
 #: src/pages/onboarding/SyncEmails.tsx
 msgid "Sync your Emails and Calendar with CMS. Choose your privacy settings."
 msgstr "زامن بريدك الإلكتروني وتقويمك مع CMS. اختر إعدادات الخصوصية الخاصة بك."
@@ -11151,6 +11166,12 @@ msgstr "سمة "
 #: src/modules/keyboard-shortcut-menu/components/KeyboardShortcutMenuItem.tsx
 msgid "then"
 msgstr "ثم"
+
+#. js-lingui-id: 0aWyfo
+#. placeholder {0}: configuration.title || 'records'
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "There are no {0} associated with this record."
+msgstr ""
 
 #. js-lingui-id: l2fWLK
 #: src/modules/activities/files/components/FilesCard.tsx
@@ -11605,11 +11626,6 @@ msgstr ""
 msgid "Turquoise"
 msgstr "فيروزي"
 
-#. js-lingui-id: JnaRPe
-#: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
-msgid "CMS fields"
-msgstr "حقول CMS"
-
 #. js-lingui-id: YIjS4q
 #: src/pages/settings/ai/components/SettingsAgentModelCapabilities.tsx
 msgid "Twitter/X Search"
@@ -11863,7 +11879,6 @@ msgstr "تم التحديث"
 #. js-lingui-id: qIrtcK
 #: src/pages/settings/updates/SettingsUpdates.tsx
 #: src/pages/settings/updates/SettingsUpdates.tsx
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Updates"
 msgstr "التحديثات"
 

@@ -4,18 +4,11 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "=== 1. System updates ==="
 apt-get update -y && apt-get upgrade -y
-apt-get install -y curl gnupg2 lsb-release ca-certificates apt-transport-https wget sudo
+apt-get install -y curl gnupg2 lsb-release ca-certificates wget sudo
 
-echo "=== 2. PostgreSQL 16 ==="
-if ! command -v psql &>/dev/null; then
-    curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /usr/share/keyrings/postgresql-keyring.gpg 2>/dev/null || true
-    CODENAME="bookworm"
-    echo "deb [signed-by=/usr/share/keyrings/postgresql-keyring.gpg] http://apt.postgresql.org/pub/repos/apt ${CODENAME}-pgdg main" > /etc/apt/sources.list.d/pgdg.list
-    apt-get update -y
-    apt-get install -y postgresql-16 postgresql-client-16
-fi
-systemctl enable postgresql
-systemctl start postgresql
+echo "=== 2. PostgreSQL 17 (native Debian 13) ==="
+apt-get install -y postgresql postgresql-client
+systemctl enable postgresql && systemctl start postgresql
 for i in $(seq 1 30); do su - postgres -c "pg_isready" &>/dev/null && break; sleep 1; done
 
 su - postgres -c "psql" <<'EOSQL'
@@ -82,13 +75,62 @@ server {
 
     client_max_body_size 50M;
 
-    location /api { proxy_pass http://localhost:3000; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection 'upgrade'; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_read_timeout 90s; }
-    location /graphql { proxy_pass http://localhost:3000; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection 'upgrade'; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_read_timeout 90s; }
-    location /rest { proxy_pass http://localhost:3000; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection 'upgrade'; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_read_timeout 90s; }
-    location /healthz { proxy_pass http://localhost:3000; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; }
-    location /files { proxy_pass http://localhost:3000; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; client_max_body_size 50M; }
+    location /api {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 90s;
+    }
 
-    location / { try_files $uri $uri/ /index.html; }
+    location /graphql {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 90s;
+    }
+
+    location /rest {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 90s;
+    }
+
+    location /healthz {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /files {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        client_max_body_size 50M;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
 }
 NGINX
 ln -sf /etc/nginx/sites-available/cms /etc/nginx/sites-enabled/cms
@@ -172,7 +214,7 @@ echo "Node: $(node --version)"
 echo "Yarn: $(yarn --version 2>/dev/null || echo N/A)"
 echo "PM2: $(pm2 --version 2>/dev/null)"
 echo "PG: $(psql --version)"
-echo "Redis: $(redis-server --version | head -c 40)"
+echo "Redis: $(redis-server --version | head -c 50)"
 nginx -v 2>&1
 echo ""
 PGPASSWORD=cms_secure_pass_2024 psql -U cms -d cms -h localhost -c "SELECT 1 AS ok;"
