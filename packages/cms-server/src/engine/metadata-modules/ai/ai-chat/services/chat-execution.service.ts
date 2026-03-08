@@ -1,3 +1,4 @@
+import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 
 import { anthropic } from '@ai-sdk/anthropic';
@@ -74,6 +75,7 @@ export class ChatExecutionService {
     private readonly aiBillingService: AIBillingService,
     private readonly agentActorContextService: AgentActorContextService,
     private readonly workspaceDomainsService: WorkspaceDomainsService,
+    private readonly httpService: HttpService,
   ) {}
 
   async streamChat({
@@ -160,6 +162,7 @@ export class ChatExecutionService {
       filename: string;
       storagePath: string;
       url: string;
+      content?: string;
     }> = [];
 
     if (extractedFiles.length > 0) {
@@ -286,7 +289,7 @@ export class ChatExecutionService {
     skillCatalog: Array<{ name: string; label: string; description: string }>,
     preloadedTools: string[],
     contextString?: string,
-    storedFiles?: Array<{ filename: string; storagePath: string; url: string }>,
+    storedFiles?: Array<{ filename: string; storagePath: string; url: string; content?: string }>,
   ): string {
     const parts: string[] = [
       CHAT_SYSTEM_PROMPTS.BASE,
@@ -310,27 +313,23 @@ export class ChatExecutionService {
   }
 
   private buildUploadedFilesSection(
-    storedFiles: Array<{ filename: string; storagePath: string; url: string }>,
+    storedFiles: Array<{ filename: string; storagePath: string; url: string; content?: string }>,
   ): string {
-    const fileList = storedFiles.map((f) => `- ${f.filename}`).join('\n');
+    const parts: string[] = ['\n## Uploaded Files\n'];
 
-    const filesJson = JSON.stringify(
-      storedFiles.map((f) => ({ filename: f.filename, url: f.url })),
+    for (const file of storedFiles) {
+      if (file.content) {
+        parts.push(`### File: ${file.filename}\n\`\`\`\n${file.content}\n\`\`\`\n`);
+      } else {
+        parts.push(`### File: ${file.filename}\n(Could not read file content)\n`);
+      }
+    }
+
+    parts.push(
+      'Use the file contents above to answer the user\'s questions. Analyze the data directly from the content provided.',
     );
 
-    return `
-## Uploaded Files
-
-The user has uploaded the following files:
-${fileList}
-
-**IMPORTANT**: Use the \`code_interpreter\` tool to analyze these files.
-When calling code_interpreter, include the files parameter with these values:
-\`\`\`json
-${filesJson}
-\`\`\`
-
-In your Python code, access files at \`/home/user/{filename}\`.`;
+    return parts.join('\n');
   }
 
   private buildSkillCatalogSection(
@@ -455,13 +454,53 @@ ${tools
   private async storeExtractedFiles(
     files: ExtractedFile[],
     _workspaceId: string,
-  ): Promise<Array<{ filename: string; storagePath: string; url: string }>> {
-    // Files are already uploaded and have URLs, just return them with their info
-    // The code interpreter tool will download them when needed
-    return files.map((file) => ({
-      filename: file.filename,
-      storagePath: file.filename,
-      url: file.url,
-    }));
+  ): Promise<
+    Array<{
+      filename: string;
+      storagePath: string;
+      url: string;
+      content?: string;
+    }>
+  > {
+    const results: Array<{
+      filename: string;
+      storagePath: string;
+      url: string;
+      content?: string;
+    }> = [];
+
+    for (const file of files) {
+      let content: string | undefined;
+
+      try {
+        const response = await this.httpService.axiosRef.get(file.url, {
+          responseType: 'arraybuffer',
+          timeout: 30_000,
+        });
+
+        const buffer = Buffer.from(response.data);
+        const MAX_FILE_SIZE = 100_000; // ~100KB text limit
+
+        if (buffer.length <= MAX_FILE_SIZE) {
+          content = buffer.toString('utf-8');
+        } else {
+          content = buffer.subarray(0, MAX_FILE_SIZE).toString('utf-8');
+          content += `\n\n... [File truncated at ${MAX_FILE_SIZE} bytes, total size: ${buffer.length} bytes]`;
+        }
+      } catch (error) {
+        this.logger.warn(
+          `Failed to download file ${file.filename}: ${error}`,
+        );
+      }
+
+      results.push({
+        filename: file.filename,
+        storagePath: file.filename,
+        url: file.url,
+        content,
+      });
+    }
+
+    return results;
   }
 }
