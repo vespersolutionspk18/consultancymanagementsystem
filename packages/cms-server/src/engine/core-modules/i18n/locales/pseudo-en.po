@@ -34,6 +34,11 @@ msgstr ""
 msgid "{hostnameCount} hostnames found for domain '{domainName}'. Expect 1"
 msgstr ""
 
+#. js-lingui-id: iWyd3X
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "A certification record"
+msgstr ""
+
 #. js-lingui-id: kZR6+h
 #: src/modules/company/standard-objects/company.workspace-entity.ts
 msgid "A company"
@@ -119,6 +124,11 @@ msgstr ""
 msgid "A one to many relation field should never declare a join column"
 msgstr ""
 
+#. js-lingui-id: qLuo1J
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "A past experience/assignment record"
+msgstr ""
+
 #. js-lingui-id: W6LTzL
 #: src/engine/core-modules/billing/billing.exception.ts
 msgid "A payment processing error occurred."
@@ -127,6 +137,11 @@ msgstr ""
 #. js-lingui-id: Io42ej
 #: src/modules/person/standard-objects/person.workspace-entity.ts
 msgid "A person"
+msgstr ""
+
+#. js-lingui-id: Iec/zJ
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "A project"
 msgstr ""
 
 #. js-lingui-id: sieBE7
@@ -148,6 +163,11 @@ msgstr ""
 #: src/engine/workspace-manager/workspace-migration-v2/workspace-migration-builder-v2/validators/utils/validate-role-label-uniqueness.util.ts
 #: src/engine/metadata-modules/permissions/permissions.exception.ts
 msgid "A role with this label already exists."
+msgstr ""
+
+#. js-lingui-id: tAP0F2
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+msgid "A sector"
 msgstr ""
 
 #. js-lingui-id: mkFXEH
@@ -331,6 +351,11 @@ msgstr ""
 msgid "AI agent step execution failed."
 msgstr ""
 
+#. js-lingui-id: Hk+pkg
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "AI chat conversations linked to the project"
+msgstr ""
+
 #. js-lingui-id: pdOYzu
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/workspace-members-all.view.ts
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/workflows-all.view.ts
@@ -338,8 +363,8 @@ msgstr ""
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/workflow-runs-all.view.ts
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/timeline-activities-all.view.ts
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/tasks-all.view.ts
+#: src/engine/workspace-manager/standard-objects-prefill-data/views/projects-all.view.ts
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/people-all.view.ts
-#: src/engine/workspace-manager/standard-objects-prefill-data/views/opportunities-all.view.ts
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/notes-all.view.ts
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/messages-all.view.ts
 #: src/engine/workspace-manager/standard-objects-prefill-data/views/message-threads-all.view.ts
@@ -350,7 +375,7 @@ msgid "All {objectLabelPlural}"
 msgstr ""
 
 #. js-lingui-id: hehnjM
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 msgid "Amount"
 msgstr ""
 
@@ -364,9 +389,24 @@ msgstr ""
 msgid "An agent with this name already exists."
 msgstr ""
 
+#. js-lingui-id: b7iqb4
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+msgid "An AI chat conversation within a project"
+msgstr ""
+
 #. js-lingui-id: MjyFvC
 #: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
 msgid "An attachment"
+msgstr ""
+
+#. js-lingui-id: eRvv9s
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "An education record"
+msgstr ""
+
+#. js-lingui-id: AZhEXU
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "An employment record"
 msgstr ""
 
 #. js-lingui-id: eW83iC
@@ -410,11 +450,6 @@ msgstr ""
 msgid "An object with this name already exists."
 msgstr ""
 
-#. js-lingui-id: bZq8rL
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "An opportunity"
-msgstr ""
-
 #. js-lingui-id: Tstlpf
 #: src/engine/core-modules/billing/billing.exception.ts
 msgid "An unexpected billing error occurred."
@@ -428,7 +463,6 @@ msgstr ""
 #. js-lingui-id: W5A0Ly
 #: src/engine/workspace-manager/workspace-migration-v2/workspace-migration-runner-v2/exceptions/workspace-migration-runner.exception.ts
 #: src/engine/workspace-cache/exceptions/workspace-cache.exception.ts
-#: src/engine/cms-orm/workspace-schema-manager/exceptions/workspace-schema-manager.exception.ts
 #: src/engine/metadata-modules/view-sort/filters/view-sort-rest-api-exception.filter.ts
 #: src/engine/metadata-modules/view-group/filters/view-group-rest-api-exception.filter.ts
 #: src/engine/metadata-modules/view-filter-group/filters/view-filter-group-rest-api-exception.filter.ts
@@ -442,6 +476,7 @@ msgstr ""
 #: src/engine/metadata-modules/field-metadata/field-metadata.exception.ts
 #: src/engine/core-modules/file/file.exception.ts
 #: src/engine/core-modules/auth/auth.exception.ts
+#: src/engine/cms-orm/workspace-schema-manager/exceptions/workspace-schema-manager.exception.ts
 #: src/engine/api/graphql/workspace-query-runner/workspace-query-runner.exception.ts
 #: src/engine/api/common/common-query-runners/errors/common-query-runner.exception.ts
 msgid "An unexpected error occurred."
@@ -462,11 +497,6 @@ msgstr ""
 #. js-lingui-id: EV/5J1
 #: src/engine/core-modules/emailing-domain/drivers/exceptions/emailing-domain-driver.exception.ts
 msgid "An unknown email error occurred."
-msgstr ""
-
-#. js-lingui-id: JKWicb
-#: src/modules/company/standard-objects/company.workspace-entity.ts
-msgid "Annual Recurring Revenue: The actual or estimated annual revenue of the company"
 msgstr ""
 
 #. js-lingui-id: fRWsMD
@@ -526,11 +556,6 @@ msgstr ""
 msgid "April"
 msgstr ""
 
-#. js-lingui-id: 3EiOLz
-#: src/modules/company/standard-objects/company.workspace-entity.ts
-msgid "ARR"
-msgstr ""
-
 #. js-lingui-id: Ek7xGj
 #: src/modules/workspace-member/standard-objects/workspace-member.workspace-entity.ts
 msgid "Assigned tasks"
@@ -544,6 +569,11 @@ msgstr ""
 #. js-lingui-id: ojKCLU
 #: src/modules/task/standard-objects/task.workspace-entity.ts
 msgid "Assignee"
+msgstr ""
+
+#. js-lingui-id: PHwT1T
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Assignment / Project Title"
 msgstr ""
 
 #. js-lingui-id: Max2GU
@@ -596,14 +626,14 @@ msgstr ""
 msgid "Attachment note"
 msgstr ""
 
-#. js-lingui-id: YASWpH
-#: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
-msgid "Attachment opportunity"
-msgstr ""
-
 #. js-lingui-id: P38yED
 #: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
 msgid "Attachment person"
+msgstr ""
+
+#. js-lingui-id: o54gUY
+#: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
+msgid "Attachment project"
 msgstr ""
 
 #. js-lingui-id: Tx1DxS
@@ -624,8 +654,8 @@ msgstr ""
 #. js-lingui-id: w/Sphq
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts
 #: src/modules/task/standard-objects/task.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
 #: src/modules/note/standard-objects/note.workspace-entity.ts
 #: src/modules/dashboard/standard-objects/dashboard.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
@@ -654,9 +684,9 @@ msgstr ""
 msgid "Attachments linked to the dashboard"
 msgstr ""
 
-#. js-lingui-id: kw0mLu
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Attachments linked to the opportunity"
+#. js-lingui-id: CIPTFi
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Attachments linked to the project"
 msgstr ""
 
 #. js-lingui-id: 83l3Yd
@@ -726,6 +756,11 @@ msgstr ""
 msgid "Automatically create records for people you participated with in an event."
 msgstr ""
 
+#. js-lingui-id: LJro2z
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Available documents and application details"
+msgstr ""
+
 #. js-lingui-id: kfcRb0
 #: src/modules/person/standard-objects/person.workspace-entity.ts
 msgid "Avatar"
@@ -739,6 +774,16 @@ msgstr ""
 #. js-lingui-id: GVurVk
 #: src/engine/api/common/common-query-runners/errors/common-query-runner.exception.ts
 msgid "Bad request."
+msgstr ""
+
+#. js-lingui-id: q+M7I8
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Bid Security"
+msgstr ""
+
+#. js-lingui-id: 1NRFHS
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Bid security amount"
 msgstr ""
 
 #. js-lingui-id: rkIGWa
@@ -794,8 +839,33 @@ msgstr ""
 msgid "Body"
 msgstr ""
 
+#. js-lingui-id: B9K4ed
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Brief Description of Assignment"
+msgstr ""
+
+#. js-lingui-id: qRrZx1
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Brief description of job responsibilities"
+msgstr ""
+
+#. js-lingui-id: IyYpYk
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Brief description of the assignment"
+msgstr ""
+
+#. js-lingui-id: C9oOL7
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Brief introduction or bio of the person"
+msgstr ""
+
+#. js-lingui-id: fYwGTl
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Brief Job Description"
+msgstr ""
+
 #. js-lingui-id: 6+byWT
-#: src/engine/workspace-manager/standard-objects-prefill-data/views/opportunity-by-stage.view.ts
+#: src/engine/workspace-manager/standard-objects-prefill-data/views/project-by-stage.view.ts
 msgid "By Stage"
 msgstr ""
 
@@ -1009,6 +1079,27 @@ msgstr ""
 msgid "Cannot update workflow version status manually"
 msgstr ""
 
+#. js-lingui-id: lWGaqs
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Certificate"
+msgstr ""
+
+#. js-lingui-id: kvjBSz
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Certification"
+msgstr ""
+
+#. js-lingui-id: 7jqJvV
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Certification records linked to this person"
+msgstr ""
+
+#. js-lingui-id: DqE4jO
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Certifications"
+msgstr ""
+
 #. js-lingui-id: 4IVK41
 #: src/modules/calendar/common/standard-objects/calendar-channel-event-association.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-channel-event-association.workspace-entity.ts
@@ -1020,9 +1111,75 @@ msgstr ""
 msgid "Channel Type"
 msgstr ""
 
+#. js-lingui-id: AHZflp
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+msgid "Chat"
+msgstr ""
+
+#. js-lingui-id: W3Ergl
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+msgid "Chat messages as JSON array"
+msgstr ""
+
+#. js-lingui-id: 1J1BrE
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+msgid "Chat record position"
+msgstr ""
+
+#. js-lingui-id: UWbiLK
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+msgid "Chat title"
+msgstr ""
+
+#. js-lingui-id: 8Q+lLG
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Chats"
+msgstr ""
+
 #. js-lingui-id: 3wV73y
 #: src/modules/person/standard-objects/person.workspace-entity.ts
 msgid "City"
+msgstr ""
+
+#. js-lingui-id: +6NyRG
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Client"
+msgstr ""
+
+#. js-lingui-id: ajj0gU
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Client address"
+msgstr ""
+
+#. js-lingui-id: C2o8Pq
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Client Address"
+msgstr ""
+
+#. js-lingui-id: yj/aHR
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Client Contact Number"
+msgstr ""
+
+#. js-lingui-id: xMqnV2
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Client contact phone number"
+msgstr ""
+
+#. js-lingui-id: I3x6MZ
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Client Email"
+msgstr ""
+
+#. js-lingui-id: UvE87J
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Client email address"
+msgstr ""
+
+#. js-lingui-id: 9CG2Cv
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Client name"
 msgstr ""
 
 #. js-lingui-id: unYzAT
@@ -1030,9 +1187,9 @@ msgstr ""
 msgid "Client not found."
 msgstr ""
 
-#. js-lingui-id: NRF7pg
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Close date"
+#. js-lingui-id: 3F1TZB
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "CNIC/Passport Number"
 msgstr ""
 
 #. js-lingui-id: o21Tgt
@@ -1046,20 +1203,31 @@ msgid "Color Scheme"
 msgstr ""
 
 #. js-lingui-id: s2QZS6
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
 msgid "Companies"
+msgstr ""
+
+#. js-lingui-id: miYJSE
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Companies linked to the project"
 msgstr ""
 
 #. js-lingui-id: 7i8j3G
 #: src/modules/timeline/standard-objects/timeline-activity.workspace-entity.ts
 #: src/modules/task/standard-objects/task-target.workspace-entity.ts
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
 #: src/modules/note/standard-objects/note-target.workspace-entity.ts
 #: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
 #: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
 msgid "Company"
+msgstr ""
+
+#. js-lingui-id: rhTzHK
+#: src/modules/company/standard-objects/company.workspace-entity.ts
+msgid "Company expertise and capabilities"
 msgstr ""
 
 #. js-lingui-id: yA1de7
@@ -1150,9 +1318,9 @@ msgstr ""
 msgid "Contact’s avatar"
 msgstr ""
 
-#. js-lingui-id: pL+pqi
+#. js-lingui-id: SZvta4
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-msgid "Contact’s city"
+msgid "Contact's city"
 msgstr ""
 
 #. js-lingui-id: VnWMlz
@@ -1195,6 +1363,16 @@ msgstr ""
 msgid "Contact’s X/Twitter account"
 msgstr ""
 
+#. js-lingui-id: dQPeqR
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Contract / Project Value"
+msgstr ""
+
+#. js-lingui-id: vgNzQq
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Contract or project value"
+msgstr ""
+
 #. js-lingui-id: gdbojg
 #: src/engine/metadata-modules/object-permission/field-permission/field-permission.service.ts
 msgid "Contradicting field permissions have been detected on a relation field ({fieldName})."
@@ -1220,14 +1398,42 @@ msgstr ""
 msgid "Could not find relation field parent flat object"
 msgstr ""
 
+#. js-lingui-id: JNCzPW
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Country"
+msgstr ""
+
+#. js-lingui-id: ghu819
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Country of employment"
+msgstr ""
+
+#. js-lingui-id: PzLEMz
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Country where the certification was obtained"
+msgstr ""
+
+#. js-lingui-id: eUFKm7
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Country where the institution is located"
+msgstr ""
+
 #. js-lingui-id: NCIYDF
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts
 #: src/modules/task/standard-objects/task.workspace-entity.ts
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
 #: src/modules/note/standard-objects/note.workspace-entity.ts
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+#: src/modules/education/standard-objects/education.workspace-entity.ts
 #: src/modules/dashboard/standard-objects/dashboard.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
 #: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
 #: src/engine/cms-orm/custom.workspace-entity.ts
 msgid "Created by"
@@ -1396,6 +1602,11 @@ msgstr ""
 msgid "Date format"
 msgstr ""
 
+#. js-lingui-id: 7uHWR+
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Date of Birth"
+msgstr ""
+
 #. js-lingui-id: 1lL5Iu
 #: src/engine/cms-orm/base.workspace-entity.ts
 msgid "Date when the record was deleted"
@@ -1439,6 +1650,11 @@ msgstr ""
 msgid "Default values must be unique"
 msgstr ""
 
+#. js-lingui-id: DFxAFd
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Degree"
+msgstr ""
+
 #. js-lingui-id: QN9ahV
 #: src/engine/cms-orm/base.workspace-entity.ts
 msgid "Deleted at"
@@ -1461,6 +1677,11 @@ msgstr ""
 #: src/modules/calendar/common/standard-objects/calendar-event-participant.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event-participant.workspace-entity.ts
 msgid "Display Name"
+msgstr ""
+
+#. js-lingui-id: mifgD1
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Documents Available & Application"
 msgstr ""
 
 #. js-lingui-id: IymH4t
@@ -1497,6 +1718,32 @@ msgstr ""
 #: src/engine/metadata-modules/flat-field-metadata/validators/utils/validate-enum-flat-field-metadata.util.ts
 #: src/engine/metadata-modules/flat-field-metadata/validators/utils/validate-enum-flat-field-metadata.util.ts
 msgid "Duplicated option {field}"
+msgstr ""
+
+#. js-lingui-id: lc7TeP
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Duration (Months)"
+msgstr ""
+
+#. js-lingui-id: UDFuTK
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Duration in months"
+msgstr ""
+
+#. js-lingui-id: aqxYLv
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Education"
+msgstr ""
+
+#. js-lingui-id: GMbc8d
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Education records linked to this person"
+msgstr ""
+
+#. js-lingui-id: KFtx/B
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Educations"
 msgstr ""
 
 #. js-lingui-id: AcnTuz
@@ -1578,15 +1825,52 @@ msgstr ""
 msgid "Employees"
 msgstr ""
 
+#. js-lingui-id: +an/V5
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Employer Name"
+msgstr ""
+
+#. js-lingui-id: Q9A9nM
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Employment end date"
+msgstr ""
+
+#. js-lingui-id: 86ojKa
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Employment Record"
+msgstr ""
+
+#. js-lingui-id: lF9V0U
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Employment Records"
+msgstr ""
+
+#. js-lingui-id: GpvfAT
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Employment records linked to this person"
+msgstr ""
+
+#. js-lingui-id: l2NMcy
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Employment start date"
+msgstr ""
+
 #. js-lingui-id: aVGG1u
 #: src/engine/metadata-modules/permissions/permissions.exception.ts
 msgid "Empty field permissions are not allowed."
 msgstr ""
 
 #. js-lingui-id: VFv2ZC
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 msgid "End Date"
+msgstr ""
+
+#. js-lingui-id: Eq8gO0
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "End date of the assignment"
 msgstr ""
 
 #. js-lingui-id: z1wQ2q
@@ -1612,8 +1896,8 @@ msgid "Enum operation failed."
 msgstr ""
 
 #. js-lingui-id: AOk97Y
-#: src/engine/cms-orm/exceptions/cms-orm.exception.ts
 #: src/engine/metadata-modules/workspace-migration/workspace-migration.exception.ts
+#: src/engine/cms-orm/exceptions/cms-orm.exception.ts
 msgid "Enum type not found."
 msgstr ""
 
@@ -1673,11 +1957,6 @@ msgstr ""
 msgid "Event note"
 msgstr ""
 
-#. js-lingui-id: eSt759
-#: src/modules/timeline/standard-objects/timeline-activity.workspace-entity.ts
-msgid "Event opportunity"
-msgstr ""
-
 #. js-lingui-id: aicVfT
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
@@ -1687,6 +1966,11 @@ msgstr ""
 #. js-lingui-id: 0mp45a
 #: src/modules/timeline/standard-objects/timeline-activity.workspace-entity.ts
 msgid "Event person"
+msgstr ""
+
+#. js-lingui-id: c2hYRm
+#: src/modules/timeline/standard-objects/timeline-activity.workspace-entity.ts
+msgid "Event project"
 msgstr ""
 
 #. js-lingui-id: mMq0Wy
@@ -1750,6 +2034,11 @@ msgstr ""
 #. js-lingui-id: AiFXmG
 #: src/engine/cms-orm/utils/compute-relation-connect-query-configs.util.ts
 msgid "Expected the same constraint fields to be used consistently across all operations for {connectFieldName}."
+msgstr ""
+
+#. js-lingui-id: PXKAnm
+#: src/modules/company/standard-objects/company.workspace-entity.ts
+msgid "Expertise"
 msgstr ""
 
 #. js-lingui-id: 5KfWxA
@@ -1859,11 +2148,6 @@ msgstr ""
 msgid "Favorite note"
 msgstr ""
 
-#. js-lingui-id: RRr9Bp
-#: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
-msgid "Favorite opportunity"
-msgstr ""
-
 #. js-lingui-id: RM6B6V
 #: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
 msgid "Favorite person"
@@ -1872,6 +2156,11 @@ msgstr ""
 #. js-lingui-id: oVA9vM
 #: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
 msgid "Favorite position"
+msgstr ""
+
+#. js-lingui-id: UfDD8m
+#: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
+msgid "Favorite project"
 msgstr ""
 
 #. js-lingui-id: OaQVQH
@@ -1905,8 +2194,8 @@ msgstr ""
 #: src/modules/workflow/common/standard-objects/workflow-version.workspace-entity.ts
 #: src/modules/workflow/common/standard-objects/workflow-run.workspace-entity.ts
 #: src/modules/task/standard-objects/task.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
 #: src/modules/note/standard-objects/note.workspace-entity.ts
 #: src/modules/favorite-folder/standard-objects/favorite-folder.workspace-entity.ts
 #: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
@@ -1941,9 +2230,9 @@ msgstr ""
 msgid "Favorites linked to the note"
 msgstr ""
 
-#. js-lingui-id: 9zd8hg
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Favorites linked to the opportunity"
+#. js-lingui-id: CtZzFc
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Favorites linked to the project"
 msgstr ""
 
 #. js-lingui-id: L5ccWD
@@ -2206,6 +2495,11 @@ msgstr ""
 msgid "Friday"
 msgstr ""
 
+#. js-lingui-id: Kc/T+D
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "From (Date)"
+msgstr ""
+
 #. js-lingui-id: oQA+cA
 #: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
 msgid "Full path"
@@ -2244,6 +2538,11 @@ msgstr ""
 #. js-lingui-id: zKksGw
 #: src/engine/metadata-modules/serverless-function/serverless-function.exception.ts
 msgid "Function version not found."
+msgstr ""
+
+#. js-lingui-id: XuEZ/t
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Funded By"
 msgstr ""
 
 #. js-lingui-id: cvJ2e6
@@ -2376,6 +2675,12 @@ msgstr ""
 msgid "Input is too short."
 msgstr ""
 
+#. js-lingui-id: jw3JQu
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Institution"
+msgstr ""
+
 #. js-lingui-id: 9sx+WQ
 #: src/engine/core-modules/emailing-domain/drivers/exceptions/emailing-domain-driver.exception.ts
 msgid "Insufficient permissions for email domain."
@@ -2389,6 +2694,11 @@ msgstr ""
 #. js-lingui-id: J1UlII
 #: src/engine/core-modules/auth/auth.exception.ts
 msgid "Insufficient permissions."
+msgstr ""
+
+#. js-lingui-id: kka8e4
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Intro"
 msgstr ""
 
 #. js-lingui-id: mYSErp
@@ -2574,8 +2884,8 @@ msgid "Invalid identity provider type."
 msgstr ""
 
 #. js-lingui-id: t7SpQO
-#: src/engine/cms-orm/exceptions/cms-orm.exception.ts
 #: src/engine/core-modules/auth/auth.exception.ts
+#: src/engine/cms-orm/exceptions/cms-orm.exception.ts
 msgid "Invalid input provided."
 msgstr ""
 
@@ -2936,7 +3246,7 @@ msgstr ""
 msgid "Join column name is required."
 msgstr ""
 
-#. js-lingui-id: PviVyk
+#. js-lingui-id: NekqF4
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
 msgid "Join your team on CMS"
 msgstr ""
@@ -3006,6 +3316,16 @@ msgstr ""
 #: src/engine/workspace-manager/workspace-migration-v2/workspace-migration-builder-v2/validators/services/flat-view-validator.service.ts
 #: src/engine/workspace-manager/workspace-migration-v2/workspace-migration-builder-v2/validators/services/flat-view-validator.service.ts
 msgid "Kanban view must have a main group by field"
+msgstr ""
+
+#. js-lingui-id: lA1r0y
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Key Responsibilities / Outputs"
+msgstr ""
+
+#. js-lingui-id: llmeju
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Key responsibilities and outputs"
 msgstr ""
 
 #. js-lingui-id: 6sFS+I
@@ -3131,15 +3451,31 @@ msgstr ""
 msgid "Linkedin"
 msgstr ""
 
-#. js-lingui-id: LeFv/R
+#. js-lingui-id: HBlp1t
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-msgid "List of opportunities for which that person is the point of contact"
+msgid "List of projects for which that person is the point of contact"
 msgstr ""
 
 #. js-lingui-id: wJijgU
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 msgid "Location"
+msgstr ""
+
+#. js-lingui-id: i2GXWz
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Major / Minor"
+msgstr ""
+
+#. js-lingui-id: Ob1okD
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Major or minor field of certification"
+msgstr ""
+
+#. js-lingui-id: VGRVBZ
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Major or minor field of study"
 msgstr ""
 
 #. js-lingui-id: hg6l4j
@@ -3305,6 +3641,7 @@ msgid "Message Threads"
 msgstr ""
 
 #. js-lingui-id: t7TeQU
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
 #: src/modules/messaging/common/standard-objects/message.workspace-entity.ts
 #: src/modules/messaging/common/standard-objects/message-thread.workspace-entity.ts
 msgid "Messages"
@@ -3449,8 +3786,9 @@ msgstr ""
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts
 #: src/modules/workflow/common/standard-objects/workflow-version.workspace-entity.ts
 #: src/modules/workflow/common/standard-objects/workflow-run.workspace-entity.ts
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
 #: src/modules/messaging/common/standard-objects/message-folder.workspace-entity.ts
 #: src/modules/favorite-folder/standard-objects/favorite-folder.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
@@ -3506,6 +3844,41 @@ msgstr ""
 msgid "Name must be in camelCase format."
 msgstr ""
 
+#. js-lingui-id: 6vTiqs
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Name of Client"
+msgstr ""
+
+#. js-lingui-id: Nonidh
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Name of the certificate"
+msgstr ""
+
+#. js-lingui-id: YIef0G
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Name of the certifying institution"
+msgstr ""
+
+#. js-lingui-id: QUYydo
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Name of the client"
+msgstr ""
+
+#. js-lingui-id: m49NIu
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Name of the degree"
+msgstr ""
+
+#. js-lingui-id: ujLa67
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Name of the educational institution"
+msgstr ""
+
+#. js-lingui-id: IUrNRm
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Name of the employer"
+msgstr ""
+
 #. js-lingui-id: EEVPOx
 #: src/modules/favorite-folder/standard-objects/favorite-folder.workspace-entity.ts
 msgid "Name of the favorite folder"
@@ -3527,6 +3900,16 @@ msgstr ""
 #: src/engine/metadata-modules/flat-object-metadata/validators/utils/validate-flat-object-metadata-name-and-labels.util.ts
 #: src/engine/metadata-modules/flat-object-metadata/validators/utils/validate-flat-object-metadata-name-and-labels.util.ts
 msgid "Names are not synced with labels"
+msgstr ""
+
+#. js-lingui-id: ZDT5xe
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "National ID or passport number"
+msgstr ""
+
+#. js-lingui-id: 2YKBHm
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Nationality"
 msgstr ""
 
 #. js-lingui-id: TYhxR+
@@ -3649,8 +4032,8 @@ msgid "Note title"
 msgstr ""
 
 #. js-lingui-id: 1DBGsz
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
 #: src/modules/note/standard-objects/note.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
 #: src/engine/cms-orm/custom.workspace-entity.ts
@@ -3672,9 +4055,9 @@ msgstr ""
 msgid "Notes tied to the contact"
 msgstr ""
 
-#. js-lingui-id: 0bi/Eh
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Notes tied to the opportunity"
+#. js-lingui-id: gINCcp
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Notes tied to the project"
 msgstr ""
 
 #. js-lingui-id: B2Y6QU
@@ -3687,14 +4070,14 @@ msgstr ""
 msgid "NoteTarget note"
 msgstr ""
 
-#. js-lingui-id: DTs4tO
-#: src/modules/note/standard-objects/note-target.workspace-entity.ts
-msgid "NoteTarget opportunity"
-msgstr ""
-
 #. js-lingui-id: gBwbnk
 #: src/modules/note/standard-objects/note-target.workspace-entity.ts
 msgid "NoteTarget person"
+msgstr ""
+
+#. js-lingui-id: cBF9Q3
+#: src/modules/note/standard-objects/note-target.workspace-entity.ts
+msgid "NoteTarget project"
 msgstr ""
 
 #. js-lingui-id: t9QlBd
@@ -3817,63 +4200,6 @@ msgstr ""
 #. js-lingui-id: eYgzEd
 #: src/engine/metadata-modules/permissions/permissions.exception.ts
 msgid "Only field restrictions are allowed."
-msgstr ""
-
-#. js-lingui-id: 4MyDFl
-#: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-#: src/modules/company/standard-objects/company.workspace-entity.ts
-msgid "Opportunities"
-msgstr ""
-
-#. js-lingui-id: 5QgKbT
-#: src/modules/company/standard-objects/company.workspace-entity.ts
-msgid "Opportunities linked to the company."
-msgstr ""
-
-#. js-lingui-id: SV/iis
-#: src/modules/timeline/standard-objects/timeline-activity.workspace-entity.ts
-#: src/modules/task/standard-objects/task-target.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-#: src/modules/note/standard-objects/note-target.workspace-entity.ts
-#: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
-#: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
-msgid "Opportunity"
-msgstr ""
-
-#. js-lingui-id: WnMlKn
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Opportunity amount"
-msgstr ""
-
-#. js-lingui-id: aj3fnv
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Opportunity close date"
-msgstr ""
-
-#. js-lingui-id: 3NYczb
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Opportunity company"
-msgstr ""
-
-#. js-lingui-id: as45IN
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Opportunity point of contact"
-msgstr ""
-
-#. js-lingui-id: 5Nu7Uw
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Opportunity probability"
-msgstr ""
-
-#. js-lingui-id: Q1dzBp
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Opportunity record position"
-msgstr ""
-
-#. js-lingui-id: 5ugYS3
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Opportunity stage"
 msgstr ""
 
 #. js-lingui-id: 2mFkfl
@@ -4090,6 +4416,22 @@ msgstr ""
 msgid "Password too weak"
 msgstr ""
 
+#. js-lingui-id: JWsZjW
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Past Experience"
+msgstr ""
+
+#. js-lingui-id: 4ixQ+C
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Past experience records linked to this person"
+msgstr ""
+
+#. js-lingui-id: vplgld
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Past Experiences"
+msgstr ""
+
 #. js-lingui-id: l6qKfi
 #: src/modules/messaging/common/standard-objects/message-folder.workspace-entity.ts
 msgid "Pending action for folder sync"
@@ -4130,10 +4472,14 @@ msgstr ""
 #: src/modules/timeline/standard-objects/timeline-activity.workspace-entity.ts
 #: src/modules/task/standard-objects/task-target.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
 #: src/modules/note/standard-objects/note-target.workspace-entity.ts
 #: src/modules/messaging/common/standard-objects/message-participant.workspace-entity.ts
 #: src/modules/messaging/common/standard-objects/message-participant.workspace-entity.ts
 #: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event-participant.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event-participant.workspace-entity.ts
 #: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
@@ -4143,6 +4489,36 @@ msgstr ""
 #. js-lingui-id: c3Qq6o
 #: src/modules/person/standard-objects/person.workspace-entity.ts
 msgid "Person record Position"
+msgstr ""
+
+#. js-lingui-id: hCQZdI
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Person this certification belongs to"
+msgstr ""
+
+#. js-lingui-id: fc9I/4
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Person this education belongs to"
+msgstr ""
+
+#. js-lingui-id: fK/zen
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Person this employment record belongs to"
+msgstr ""
+
+#. js-lingui-id: pHRYJj
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Person this experience belongs to"
+msgstr ""
+
+#. js-lingui-id: MJP2Pr
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Person's date of birth"
+msgstr ""
+
+#. js-lingui-id: ZFiQ4T
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Person's nationality"
 msgstr ""
 
 #. js-lingui-id: zmwvG2
@@ -4192,7 +4568,7 @@ msgid "Please use single sign-on to authenticate."
 msgstr ""
 
 #. js-lingui-id: P04j61
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 msgid "Point of Contact"
 msgstr ""
 
@@ -4202,16 +4578,37 @@ msgstr ""
 #: src/modules/workflow/common/standard-objects/workflow-version.workspace-entity.ts
 #: src/modules/workflow/common/standard-objects/workflow-run.workspace-entity.ts
 #: src/modules/task/standard-objects/task.workspace-entity.ts
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
 #: src/modules/note/standard-objects/note.workspace-entity.ts
 #: src/modules/favorite-folder/standard-objects/favorite-folder.workspace-entity.ts
 #: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+#: src/modules/education/standard-objects/education.workspace-entity.ts
 #: src/modules/dashboard/standard-objects/dashboard.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
 #: src/engine/cms-orm/custom.workspace-entity.ts
 #: src/engine/cms-orm/custom.workspace-entity.ts
 msgid "Position"
+msgstr ""
+
+#. js-lingui-id: fSIaRt
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Position / Designation"
+msgstr ""
+
+#. js-lingui-id: e4DgKJ
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Position or designation held"
+msgstr ""
+
+#. js-lingui-id: 896tY0
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Pre-Submission deadline"
 msgstr ""
 
 #. js-lingui-id: TTHIbk
@@ -4225,8 +4622,107 @@ msgid "Preferred language"
 msgstr ""
 
 #. js-lingui-id: WJIL29
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 msgid "Probability"
+msgstr ""
+
+#. js-lingui-id: Aw80Bd
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Procurement Details"
+msgstr ""
+
+#. js-lingui-id: e0NrBM
+#: src/modules/timeline/standard-objects/timeline-activity.workspace-entity.ts
+#: src/modules/task/standard-objects/task-target.workspace-entity.ts
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+#: src/modules/note/standard-objects/note-target.workspace-entity.ts
+#: src/modules/favorite/standard-objects/favorite.workspace-entity.ts
+#: src/modules/company/standard-objects/company.workspace-entity.ts
+#: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
+msgid "Project"
+msgstr ""
+
+#. js-lingui-id: bKVjFn
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project amount"
+msgstr ""
+
+#. js-lingui-id: n6NJWn
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project duration"
+msgstr ""
+
+#. js-lingui-id: XXeE74
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project Duration"
+msgstr ""
+
+#. js-lingui-id: YQzBiX
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project funding source"
+msgstr ""
+
+#. js-lingui-id: KvqGmK
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Project Identification"
+msgstr ""
+
+#. js-lingui-id: JNub0q
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Project identification code or number"
+msgstr ""
+
+#. js-lingui-id: RjQ4tS
+#: src/modules/company/standard-objects/company.workspace-entity.ts
+msgid "Project linked to the company"
+msgstr ""
+
+#. js-lingui-id: NnkZlN
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project point of contact"
+msgstr ""
+
+#. js-lingui-id: rd8Zab
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project pre-submission deadline"
+msgstr ""
+
+#. js-lingui-id: XJd16h
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project probability"
+msgstr ""
+
+#. js-lingui-id: DlTrhD
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project procurement details"
+msgstr ""
+
+#. js-lingui-id: s+P9BG
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project record position"
+msgstr ""
+
+#. js-lingui-id: EAcqNm
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project stage"
+msgstr ""
+
+#. js-lingui-id: 7czsIp
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Project submission date"
+msgstr ""
+
+#. js-lingui-id: XUvQcu
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+msgid "Project this chat belongs to"
+msgstr ""
+
+#. js-lingui-id: +0B+ue
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Projects"
 msgstr ""
 
 #. js-lingui-id: t/0e9D
@@ -4263,6 +4759,16 @@ msgstr ""
 #. js-lingui-id: CrfRPa
 #: src/modules/connected-account/standard-objects/connected-account.workspace-entity.ts
 msgid "provider"
+msgstr ""
+
+#. js-lingui-id: pOticu
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Province"
+msgstr ""
+
+#. js-lingui-id: PHMSy+
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "Province or state of employment"
 msgstr ""
 
 #. js-lingui-id: OL88cI
@@ -4330,6 +4836,14 @@ msgstr ""
 #: src/engine/api/graphql/graphql-query-runner/errors/graphql-query-runner.exception.ts
 #: src/engine/api/common/common-query-runners/errors/common-query-runner.exception.ts
 msgid "Record not found."
+msgstr ""
+
+#. js-lingui-id: awj87L
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Record position"
 msgstr ""
 
 #. js-lingui-id: 9gXJw8
@@ -4503,6 +5017,16 @@ msgstr ""
 msgid "Role cannot be assigned to this entity."
 msgstr ""
 
+#. js-lingui-id: ke785r
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Role in the assignment"
+msgstr ""
+
+#. js-lingui-id: TIm9pR
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Role in the Assignment"
+msgstr ""
+
 #. js-lingui-id: zeffu9
 #: src/engine/metadata-modules/permissions/permissions.exception.ts
 msgid "Role must have at least one target."
@@ -4621,6 +5145,16 @@ msgstr ""
 msgid "Schema enum operation failed."
 msgstr ""
 
+#. js-lingui-id: qSW2xx
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Scope & Deliverables"
+msgstr ""
+
+#. js-lingui-id: H9dDz4
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Scope and deliverables of the assignment"
+msgstr ""
+
 #. js-lingui-id: N/rFzD
 #: src/modules/connected-account/standard-objects/connected-account.workspace-entity.ts
 #: src/modules/connected-account/standard-objects/connected-account.workspace-entity.ts
@@ -4630,6 +5164,63 @@ msgstr ""
 #. js-lingui-id: PdVIJC
 #: src/engine/metadata-modules/search-field-metadata/constants/search-vector-field.constants.ts
 msgid "Search vector"
+msgstr ""
+
+#. js-lingui-id: 0XGeB0
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+msgid "Sector"
+msgstr ""
+
+#. js-lingui-id: 1MroSQ
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Sector / Type of Project"
+msgstr ""
+
+#. js-lingui-id: VI77ej
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+msgid "Sector company"
+msgstr ""
+
+#. js-lingui-id: 6SHAxq
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Sector or type of the project"
+msgstr ""
+
+#. js-lingui-id: fxp6qC
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+msgid "Sector project"
+msgstr ""
+
+#. js-lingui-id: Vja3ay
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+msgid "Sector record position"
+msgstr ""
+
+#. js-lingui-id: BD/9kt
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+#: src/modules/company/standard-objects/company.workspace-entity.ts
+msgid "Sectors"
+msgstr ""
+
+#. js-lingui-id: DFZNnc
+#: src/modules/company/standard-objects/company.workspace-entity.ts
+msgid "Sectors linked to the company."
+msgstr ""
+
+#. js-lingui-id: qTvOPD
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Sectors linked to the project"
+msgstr ""
+
+#. js-lingui-id: ebF03X
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+msgid "Selected file attachments for context (max 5)"
+msgstr ""
+
+#. js-lingui-id: 8hqwEv
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+msgid "Selected Files"
 msgstr ""
 
 #. js-lingui-id: hgvbYY
@@ -4731,7 +5322,7 @@ msgid "SSO is disabled."
 msgstr ""
 
 #. js-lingui-id: 3PRxO3
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 msgid "Stage"
 msgstr ""
 
@@ -4752,9 +5343,15 @@ msgid "Standard objects cannot be deleted"
 msgstr ""
 
 #. js-lingui-id: D3iCkb
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 msgid "Start Date"
+msgstr ""
+
+#. js-lingui-id: 9Qt4Jh
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Start date of the assignment"
 msgstr ""
 
 #. js-lingui-id: amGzX5
@@ -4801,6 +5398,11 @@ msgstr ""
 #: src/modules/messaging/common/standard-objects/message.workspace-entity.ts
 #: src/modules/messaging/common/standard-objects/message.workspace-entity.ts
 msgid "Subject"
+msgstr ""
+
+#. js-lingui-id: suZlyx
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Submission date"
 msgstr ""
 
 #. js-lingui-id: x0Vn7k
@@ -4935,8 +5537,8 @@ msgstr ""
 
 #. js-lingui-id: GtycJ/
 #: src/modules/task/standard-objects/task.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
 #: src/engine/cms-orm/custom.workspace-entity.ts
 msgid "Tasks"
@@ -4962,9 +5564,9 @@ msgstr ""
 msgid "Tasks tied to the contact"
 msgstr ""
 
-#. js-lingui-id: 1TfX9U
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Tasks tied to the opportunity"
+#. js-lingui-id: FkJ/wM
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Tasks tied to the project"
 msgstr ""
 
 #. js-lingui-id: pP0Dt9
@@ -4972,14 +5574,14 @@ msgstr ""
 msgid "TaskTarget company"
 msgstr ""
 
-#. js-lingui-id: UJ2aPi
-#: src/modules/task/standard-objects/task-target.workspace-entity.ts
-msgid "TaskTarget opportunity"
-msgstr ""
-
 #. js-lingui-id: I1MiSs
 #: src/modules/task/standard-objects/task-target.workspace-entity.ts
 msgid "TaskTarget person"
+msgstr ""
+
+#. js-lingui-id: 1nHwKo
+#: src/modules/task/standard-objects/task-target.workspace-entity.ts
+msgid "TaskTarget project"
 msgstr ""
 
 #. js-lingui-id: pciKLT
@@ -5053,11 +5655,17 @@ msgstr ""
 #. js-lingui-id: zGBDEH
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts
 #: src/modules/task/standard-objects/task.workspace-entity.ts
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/person/standard-objects/person.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
 #: src/modules/note/standard-objects/note.workspace-entity.ts
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+#: src/modules/education/standard-objects/education.workspace-entity.ts
 #: src/modules/dashboard/standard-objects/dashboard.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
 #: src/modules/attachment/standard-objects/attachment.workspace-entity.ts
 #: src/engine/cms-orm/custom.workspace-entity.ts
 msgid "The creator of the record"
@@ -5124,9 +5732,9 @@ msgstr ""
 msgid "The object you are trying to set permissions for could not be found. It may have been deleted."
 msgstr ""
 
-#. js-lingui-id: DbWmKZ
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "The opportunity name"
+#. js-lingui-id: JMR5+Q
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "The project name"
 msgstr ""
 
 #. js-lingui-id: pv+BoZ
@@ -5151,6 +5759,11 @@ msgstr ""
 #: src/engine/metadata-modules/object-permission/object-permission.service.ts
 #: src/engine/metadata-modules/object-permission/field-permission/field-permission.service.ts
 msgid "The role you are trying to modify could not be found. It may have been deleted or you may not have access to it."
+msgstr ""
+
+#. js-lingui-id: b+eeJA
+#: src/modules/sector/standard-objects/sector.workspace-entity.ts
+msgid "The sector name"
 msgstr ""
 
 #. js-lingui-id: H1tAJD
@@ -5434,7 +6047,7 @@ msgstr ""
 #: src/modules/workflow/common/standard-objects/workflow-run.workspace-entity.ts
 #: src/modules/timeline/standard-objects/timeline-activity.workspace-entity.ts
 #: src/modules/task/standard-objects/task.workspace-entity.ts
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
+#: src/modules/project/standard-objects/project.workspace-entity.ts
 #: src/modules/note/standard-objects/note.workspace-entity.ts
 #: src/modules/dashboard/standard-objects/dashboard.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
@@ -5457,9 +6070,9 @@ msgstr ""
 msgid "Timeline Activities linked to the note."
 msgstr ""
 
-#. js-lingui-id: p6feIz
-#: src/modules/opportunity/standard-objects/opportunity.workspace-entity.ts
-msgid "Timeline Activities linked to the opportunity."
+#. js-lingui-id: gRUiKu
+#: src/modules/project/standard-objects/project.workspace-entity.ts
+msgid "Timeline Activities linked to the project."
 msgstr ""
 
 #. js-lingui-id: yvPwuF
@@ -5494,11 +6107,22 @@ msgstr ""
 
 #. js-lingui-id: MHrjPM
 #: src/modules/task/standard-objects/task.workspace-entity.ts
+#: src/modules/project-chat/standard-objects/project-chat.workspace-entity.ts
 #: src/modules/note/standard-objects/note.workspace-entity.ts
 #: src/modules/dashboard/standard-objects/dashboard.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 #: src/modules/calendar/common/standard-objects/calendar-event.workspace-entity.ts
 msgid "Title"
+msgstr ""
+
+#. js-lingui-id: rMouwd
+#: src/modules/past-experience/standard-objects/past-experience.workspace-entity.ts
+msgid "Title of the assignment or project"
+msgstr ""
+
+#. js-lingui-id: j0AHgR
+#: src/modules/employment-record/standard-objects/employment-record.workspace-entity.ts
+msgid "To (Date)"
 msgstr ""
 
 #. js-lingui-id: /ObxXq
@@ -5525,6 +6149,16 @@ msgstr ""
 #. js-lingui-id: mfqtz7
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
 msgid "Too many workspace invitations sent. Please try again later."
+msgstr ""
+
+#. js-lingui-id: vj2UTu
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Total Professional Experience"
+msgstr ""
+
+#. js-lingui-id: N2avoM
+#: src/modules/person/standard-objects/person.workspace-entity.ts
+msgid "Total years of professional experience"
 msgstr ""
 
 #. js-lingui-id: VD8J6l
@@ -6031,7 +6665,7 @@ msgstr ""
 msgid "Wednesday"
 msgstr ""
 
-#. js-lingui-id: TVkCrJ
+#. js-lingui-id: eiuAlY
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
 msgid "Welcome to CMS: Please Confirm Your Email"
 msgstr ""
@@ -6293,12 +6927,12 @@ msgstr ""
 
 #. js-lingui-id: EhVOPs
 #: src/modules/workflow/workflow-executor/exceptions/workflow-step-executor.exception.ts
-#: src/engine/cms-orm/exceptions/cms-orm.exception.ts
 #: src/engine/metadata-modules/route-trigger/exceptions/route-trigger.exception.ts
 #: src/engine/core-modules/workspace/workspace.exception.ts
 #: src/engine/core-modules/tool/tools/send-email-tool/exceptions/send-email-tool.exception.ts
 #: src/engine/core-modules/record-crud/exceptions/record-crud.exception.ts
 #: src/engine/core-modules/auth/auth.exception.ts
+#: src/engine/cms-orm/exceptions/cms-orm.exception.ts
 msgid "Workspace not found."
 msgstr ""
 
@@ -6353,6 +6987,22 @@ msgstr ""
 #: src/modules/person/standard-objects/person.workspace-entity.ts
 #: src/modules/company/standard-objects/company.workspace-entity.ts
 msgid "X"
+msgstr ""
+
+#. js-lingui-id: Rk609o
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Year / Date of Completion"
+msgstr ""
+
+#. js-lingui-id: drVQD1
+#: src/modules/certification/standard-objects/certification.workspace-entity.ts
+msgid "Year or date of certification completion"
+msgstr ""
+
+#. js-lingui-id: 98Hl4c
+#: src/modules/education/standard-objects/education.workspace-entity.ts
+msgid "Year or date of completion"
 msgstr ""
 
 #. js-lingui-id: 4ysDL0

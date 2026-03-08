@@ -708,6 +708,7 @@ msgstr "Active Sync"
 #. js-lingui-id: m16xKo
 #: src/pages/settings/ai/components/SettingsAgentEvalsTab.tsx
 #: src/modules/settings/integrations/components/SettingsIntegrationComponent.tsx
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
 msgid "Add"
 msgstr "Add"
 
@@ -715,6 +716,12 @@ msgstr "Add"
 #: src/modules/settings/data-model/fields/forms/select/components/AddSelectOptionMenuItem.tsx
 msgid "Add \"{trimmedName}\" to options"
 msgstr "Add \"{trimmedName}\" to options"
+
+#. js-lingui-id: 3nLdaX
+#. placeholder {0}: configuration.title || 'record'
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "Add {0}"
+msgstr "Add {0}"
 
 #. js-lingui-id: 9CHcSG
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateNoRecordFoundForFilter.tsx
@@ -1566,7 +1573,6 @@ msgstr "Application successfully uninstalled."
 #: src/pages/settings/applications/SettingsApplications.tsx
 #: src/pages/settings/applications/SettingsApplicationDetails.tsx
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useSettingsRolePermissionFlagConfig.ts
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Applications"
 msgstr "Applications"
 
@@ -2016,7 +2022,7 @@ msgstr "bullet"
 msgid "Bullet List"
 msgstr "Bullet List"
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: pOpMDK
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "By using CMS, you agree to the"
 msgstr "By using CMS, you agree to the"
@@ -2293,7 +2299,7 @@ msgstr "Check your Emails"
 msgid "Check your inbox to verify your new email address."
 msgstr "Check your inbox to verify your new email address."
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: tKmnRP
 #: src/modules/billing/hooks/useHandleCheckoutSession.ts
 msgid "Checkout session error. Please retry or contact CMS team"
 msgstr "Checkout session error. Please retry or contact CMS team"
@@ -2441,6 +2447,11 @@ msgstr "Close banner"
 #: src/modules/ui/layout/page-header/components/PageHeaderToggleCommandMenuButton.tsx
 msgid "Close command menu"
 msgstr "Close command menu"
+
+#. js-lingui-id: 0xuMMg
+#: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
+msgid "CMS fields"
+msgstr "CMS fields"
 
 #. js-lingui-id: EWPtMO
 #: src/modules/workflow/workflow-steps/workflow-actions/code-action/components/WorkflowEditActionServerlessFunction.tsx
@@ -3959,8 +3970,6 @@ msgstr "Do not import"
 #. js-lingui-id: TvY/XA
 #: src/pages/settings/workspace/SettingsApiWebhooks.tsx
 #: src/pages/settings/developers/api-keys/SettingsApiKeys.tsx
-#: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -4769,7 +4778,7 @@ msgstr "Error while cancelling metered tier switching."
 msgid "Error while cancelling plan switching."
 msgstr "Error while cancelling plan switching."
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: DFH3/h
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
 msgid "Error while ending trial period. Please contact CMS team."
 msgstr "Error while ending trial period. Please contact CMS team."
@@ -5653,16 +5662,16 @@ msgstr "Go to Draft"
 msgid "Go to Notes"
 msgstr "Go to Notes"
 
-#. js-lingui-id: buPcNi
-#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
-msgid "Go to Opportunities"
-msgstr "Go to Opportunities"
-
 #. js-lingui-id: MrE/Qb
 #: src/modules/action-menu/mock/action-menu-actions.mock.tsx
 #: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
 msgid "Go to People"
 msgstr "Go to People"
+
+#. js-lingui-id: aKznJS
+#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
+msgid "Go to Projects"
+msgstr "Go to Projects"
 
 #. js-lingui-id: iS69s6
 #: src/modules/action-menu/actions/record-actions/constants/WorkflowVersionsActionsConfig.tsx
@@ -6924,6 +6933,7 @@ msgstr "Loading thread"
 #: src/pages/settings/emailing-domains/SettingsEmailingDomainDetail.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentEntityPickerDropdown.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminVersionDisplay.tsx
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
 #: src/modules/activities/timeline-activities/rows/message/components/EventCardMessage.tsx
 #: src/modules/activities/timeline-activities/rows/calendar/components/EventCardCalendarEvent.tsx
 msgid "Loading..."
@@ -7957,6 +7967,11 @@ msgstr "No permissions have been set for individual objects."
 msgid "No record is required to trigger this workflow"
 msgstr "No record is required to trigger this workflow"
 
+#. js-lingui-id: X8wJTR
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "No records"
+msgstr "No records"
+
 #. js-lingui-id: EqGTpW
 #: src/modules/object-record/record-table/empty-state/components/RecordTableEmptyStateReadOnly.tsx
 #: src/modules/object-record/record-picker/components/RecordPickerNoRecordFoundMenuItem.tsx
@@ -8404,11 +8419,6 @@ msgstr "Opened"
 msgid "Operational"
 msgstr "Operational"
 
-#. js-lingui-id: 4MyDFl
-#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
-msgid "Opportunities"
-msgstr "Opportunities"
-
 #. js-lingui-id: lVa1Xn
 #: src/modules/settings/data-model/fields/forms/select/hooks/useSelectSettingsFormInitialValues.ts
 msgid "Option 1"
@@ -8558,7 +8568,7 @@ msgstr "page layout tab"
 msgid "page layout widget"
 msgstr "page layout widget"
 
-#. js-lingui-id: NRvxzv
+#. js-lingui-id: 9z2pHk
 #: src/pages/not-found/NotFound.tsx
 msgid "Page Not Found | CMS"
 msgstr "Page Not Found | CMS"
@@ -8987,6 +8997,11 @@ msgstr "Profile - Settings"
 #: src/modules/settings/security/components/SettingsSecurityEditableProfileFields.tsx
 msgid "Profile Picture"
 msgstr "Profile Picture"
+
+#. js-lingui-id: +0B+ue
+#: src/modules/action-menu/actions/record-actions/constants/DefaultRecordActionsConfig.tsx
+msgid "Projects"
+msgstr "Projects"
 
 #. js-lingui-id: W9uQXX
 #: src/modules/workflow/workflow-steps/workflow-actions/ai-agent-action/components/WorkflowEditActionAiAgent.tsx
@@ -10876,7 +10891,7 @@ msgstr "Sync with Google"
 msgid "Sync with Outlook"
 msgstr "Sync with Outlook"
 
-#. js-lingui-id: +9x4tK
+#. js-lingui-id: fxaqrQ
 #: src/pages/onboarding/SyncEmails.tsx
 msgid "Sync your Emails and Calendar with CMS. Choose your privacy settings."
 msgstr "Sync your Emails and Calendar with CMS. Choose your privacy settings."
@@ -11146,6 +11161,12 @@ msgstr "Theme "
 #: src/modules/keyboard-shortcut-menu/components/KeyboardShortcutMenuItem.tsx
 msgid "then"
 msgstr "then"
+
+#. js-lingui-id: 0aWyfo
+#. placeholder {0}: configuration.title || 'records'
+#: src/modules/object-record/record-show/components/RelationTableCard.tsx
+msgid "There are no {0} associated with this record."
+msgstr "There are no {0} associated with this record."
 
 #. js-lingui-id: l2fWLK
 #: src/modules/activities/files/components/FilesCard.tsx
@@ -11602,11 +11623,6 @@ msgstr "Turn Not Found"
 msgid "Turquoise"
 msgstr "Turquoise"
 
-#. js-lingui-id: JnaRPe
-#: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
-msgid "CMS fields"
-msgstr "CMS fields"
-
 #. js-lingui-id: YIjS4q
 #: src/pages/settings/ai/components/SettingsAgentModelCapabilities.tsx
 msgid "Twitter/X Search"
@@ -11860,7 +11876,6 @@ msgstr "Updated"
 #. js-lingui-id: qIrtcK
 #: src/pages/settings/updates/SettingsUpdates.tsx
 #: src/pages/settings/updates/SettingsUpdates.tsx
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 msgid "Updates"
 msgstr "Updates"
 
