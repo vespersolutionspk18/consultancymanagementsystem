@@ -1,4 +1,3 @@
-import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 
 import { anthropic } from '@ai-sdk/anthropic';
@@ -38,10 +37,6 @@ import { repairToolCall } from 'src/engine/metadata-modules/ai/ai-agent/utils/re
 import { AIBillingService } from 'src/engine/metadata-modules/ai/ai-billing/services/ai-billing.service';
 import { CHAT_SYSTEM_PROMPTS } from 'src/engine/metadata-modules/ai/ai-chat/constants/chat-system-prompts.const';
 import {
-  extractCodeInterpreterFiles,
-  type ExtractedFile,
-} from 'src/engine/metadata-modules/ai/ai-chat/utils/extract-code-interpreter-files.util';
-import {
   type AIModelConfig,
   ModelProvider,
 } from 'src/engine/metadata-modules/ai/ai-models/constants/ai-models.const';
@@ -75,7 +70,6 @@ export class ChatExecutionService {
     private readonly aiBillingService: AIBillingService,
     private readonly agentActorContextService: AgentActorContextService,
     private readonly workspaceDomainsService: WorkspaceDomainsService,
-    private readonly httpService: HttpService,
   ) {}
 
   async streamChat({
@@ -155,29 +149,11 @@ export class ChatExecutionService {
       ),
     };
 
-    const { processedMessages, extractedFiles } =
-      extractCodeInterpreterFiles(messages);
-
-    let storedFiles: Array<{
-      filename: string;
-      storagePath: string;
-      url: string;
-      content?: string;
-    }> = [];
-
-    if (extractedFiles.length > 0) {
-      storedFiles = await this.storeExtractedFiles(
-        extractedFiles,
-        workspace.id,
-      );
-    }
-
     const systemPrompt = this.buildSystemPrompt(
       toolCatalog,
       skillCatalog,
       preloadedToolNames,
       contextString,
-      storedFiles,
     );
 
     this.logger.log(
@@ -187,7 +163,7 @@ export class ChatExecutionService {
     const stream = streamText({
       model: registeredModel.model,
       system: systemPrompt,
-      messages: await convertToModelMessages(processedMessages),
+      messages: await convertToModelMessages(messages),
       tools: activeTools,
       stopWhen: stepCountIs(AGENT_CONFIG.MAX_STEPS),
       experimental_telemetry: AI_TELEMETRY_CONFIG,
@@ -289,7 +265,6 @@ export class ChatExecutionService {
     skillCatalog: Array<{ name: string; label: string; description: string }>,
     preloadedTools: string[],
     contextString?: string,
-    storedFiles?: Array<{ filename: string; storagePath: string; url: string; content?: string }>,
   ): string {
     const parts: string[] = [
       CHAT_SYSTEM_PROMPTS.BASE,
@@ -299,35 +274,11 @@ export class ChatExecutionService {
     parts.push(this.buildToolCatalogSection(toolCatalog, preloadedTools));
     parts.push(this.buildSkillCatalogSection(skillCatalog));
 
-    if (storedFiles && storedFiles.length > 0) {
-      parts.push(this.buildUploadedFilesSection(storedFiles));
-    }
-
     if (contextString) {
       parts.push(
         `\nCONTEXT (what the user is currently viewing):\n${contextString}`,
       );
     }
-
-    return parts.join('\n');
-  }
-
-  private buildUploadedFilesSection(
-    storedFiles: Array<{ filename: string; storagePath: string; url: string; content?: string }>,
-  ): string {
-    const parts: string[] = ['\n## Uploaded Files\n'];
-
-    for (const file of storedFiles) {
-      if (file.content) {
-        parts.push(`### File: ${file.filename}\n\`\`\`\n${file.content}\n\`\`\`\n`);
-      } else {
-        parts.push(`### File: ${file.filename}\n(Could not read file content)\n`);
-      }
-    }
-
-    parts.push(
-      'Use the file contents above to answer the user\'s questions. Analyze the data directly from the content provided.',
-    );
 
     return parts.join('\n');
   }
@@ -451,56 +402,4 @@ ${tools
     }
   }
 
-  private async storeExtractedFiles(
-    files: ExtractedFile[],
-    _workspaceId: string,
-  ): Promise<
-    Array<{
-      filename: string;
-      storagePath: string;
-      url: string;
-      content?: string;
-    }>
-  > {
-    const results: Array<{
-      filename: string;
-      storagePath: string;
-      url: string;
-      content?: string;
-    }> = [];
-
-    for (const file of files) {
-      let content: string | undefined;
-
-      try {
-        const response = await this.httpService.axiosRef.get(file.url, {
-          responseType: 'arraybuffer',
-          timeout: 30_000,
-        });
-
-        const buffer = Buffer.from(response.data);
-        const MAX_FILE_SIZE = 100_000; // ~100KB text limit
-
-        if (buffer.length <= MAX_FILE_SIZE) {
-          content = buffer.toString('utf-8');
-        } else {
-          content = buffer.subarray(0, MAX_FILE_SIZE).toString('utf-8');
-          content += `\n\n... [File truncated at ${MAX_FILE_SIZE} bytes, total size: ${buffer.length} bytes]`;
-        }
-      } catch (error) {
-        this.logger.warn(
-          `Failed to download file ${file.filename}: ${error}`,
-        );
-      }
-
-      results.push({
-        filename: file.filename,
-        storagePath: file.filename,
-        url: file.url,
-        content,
-      });
-    }
-
-    return results;
-  }
 }
