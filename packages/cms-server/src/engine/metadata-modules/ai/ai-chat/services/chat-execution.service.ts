@@ -156,6 +156,8 @@ export class ChatExecutionService {
       contextString,
     );
 
+    const resolvedMessages = await this.resolveFileUrls(messages);
+
     this.logger.log(
       `Starting chat execution with model ${registeredModel.modelId}, ${Object.keys(activeTools).length} active tools`,
     );
@@ -163,7 +165,7 @@ export class ChatExecutionService {
     const stream = streamText({
       model: registeredModel.model,
       system: systemPrompt,
-      messages: await convertToModelMessages(messages),
+      messages: await convertToModelMessages(resolvedMessages),
       tools: activeTools,
       stopWhen: stepCountIs(AGENT_CONFIG.MAX_STEPS),
       experimental_telemetry: AI_TELEMETRY_CONFIG,
@@ -388,6 +390,81 @@ ${tools
       default:
         return category;
     }
+  }
+
+  private async resolveFileUrls(
+    messages: UIMessage<unknown, UIDataTypes, UITools>[],
+  ): Promise<UIMessage<unknown, UIDataTypes, UITools>[]> {
+    const resolved = [];
+
+    for (const message of messages) {
+      if (!message.parts) {
+        resolved.push(message);
+        continue;
+      }
+
+      let hasFiles = false;
+
+      for (const part of message.parts) {
+        if (
+          part.type === 'file' &&
+          'url' in part &&
+          typeof part.url === 'string' &&
+          !part.url.startsWith('data:')
+        ) {
+          hasFiles = true;
+          break;
+        }
+      }
+
+      if (!hasFiles) {
+        resolved.push(message);
+        continue;
+      }
+
+      const newParts = [];
+
+      for (const part of message.parts) {
+        if (
+          part.type === 'file' &&
+          'url' in part &&
+          typeof part.url === 'string' &&
+          !part.url.startsWith('data:')
+        ) {
+          try {
+            const response = await fetch(part.url);
+
+            if (!response.ok) {
+              throw new Error(`HTTP ${response.status}`);
+            }
+
+            const buffer = Buffer.from(await response.arrayBuffer());
+            const mediaType =
+              (part as { mediaType?: string }).mediaType ||
+              'application/octet-stream';
+            const base64 = buffer.toString('base64');
+            const dataUrl = `data:${mediaType};base64,${base64}`;
+
+            this.logger.log(
+              `Resolved file ${(part as { filename?: string }).filename ?? 'unknown'}: ${buffer.length} bytes`,
+            );
+
+            newParts.push({ ...part, url: dataUrl });
+          } catch (error) {
+            this.logger.warn(
+              `Failed to download file for AI: ${error}`,
+            );
+            newParts.push(part);
+          }
+        } else {
+          newParts.push(part);
+        }
+      }
+
+      resolved.push({ ...message, parts: newParts });
+    }
+
+    return resolved;
   }
 
   private getNativeWebSearchTool(provider: ModelProvider): ToolSet {
