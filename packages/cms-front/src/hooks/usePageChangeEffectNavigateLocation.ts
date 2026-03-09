@@ -137,6 +137,17 @@ export const usePageChangeEffectNavigateLocation = () => {
     !isMatchingLocation(location, AppPath.ResetPassword) &&
     isLoggedIn
   ) {
+    // Don't redirect away from /verify when a loginToken is present —
+    // VerifyLoginTokenEffect needs to exchange it (e.g. workspace switching).
+    const searchParams = new URLSearchParams(location.search);
+
+    if (
+      isMatchingLocation(location, AppPath.Verify) &&
+      searchParams.has('loginToken')
+    ) {
+      return;
+    }
+
     return defaultHomePagePath;
   }
 

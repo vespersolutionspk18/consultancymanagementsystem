@@ -66,20 +66,24 @@ export const useApolloFactory = (options: Partial<Options<any>> = {}) => {
       onUnauthenticatedError: () => {
         // eslint-disable-next-line no-console
         console.log('onUnauthenticatedError, resetting state');
+        // On /verify, workspace switching sets its own tokens via
+        // cookieStorage and then hard-reloads. Clearing Recoil state here
+        // would trigger the cookie effect to wipe those new tokens.
+        if (
+          isMatchingLocation(location, AppPath.Verify) ||
+          isMatchingLocation(location, AppPath.SignInUp) ||
+          isMatchingLocation(location, AppPath.Invite) ||
+          isMatchingLocation(location, AppPath.ResetPassword)
+        ) {
+          return;
+        }
         setTokenPair(null);
         setCurrentUser(null);
         setCurrentWorkspaceMember(null);
         setCurrentWorkspace(null);
         setCurrentUserWorkspace(null);
-        if (
-          !isMatchingLocation(location, AppPath.Verify) &&
-          !isMatchingLocation(location, AppPath.SignInUp) &&
-          !isMatchingLocation(location, AppPath.Invite) &&
-          !isMatchingLocation(location, AppPath.ResetPassword)
-        ) {
-          setPreviousUrl(`${location.pathname}${location.search}`);
-          navigate(AppPath.SignInUp);
-        }
+        setPreviousUrl(`${location.pathname}${location.search}`);
+        navigate(AppPath.SignInUp);
       },
       onAppVersionMismatch: (message) => {
         enqueueErrorSnackBar({

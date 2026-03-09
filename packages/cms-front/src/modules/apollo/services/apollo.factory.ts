@@ -147,6 +147,11 @@ export class ApolloFactory<TCacheShape> implements ApolloManager<TCacheShape> {
           renewToken(uri, getTokenPair())
             .then((tokens) => {
               if (isDefined(tokens)) {
+                // On /verify, the workspace-switching flow sets its own
+                // tokens. Don't overwrite them with a stale renewal.
+                if (window.location.pathname === '/verify') {
+                  return;
+                }
                 // eslint-disable-next-line no-console
                 console.log('setTokenPair from handleTokenRenewal');
                 onTokenPairChange?.(tokens);
@@ -154,6 +159,11 @@ export class ApolloFactory<TCacheShape> implements ApolloManager<TCacheShape> {
               }
             })
             .catch(() => {
+              // On /verify, the workspace-switching flow handles its own
+              // auth. Don't trigger sign-out from a stale renewal failure.
+              if (window.location.pathname === '/verify') {
+                return;
+              }
               // eslint-disable-next-line no-console
               console.log(
                 'Failed to renew token, triggering unauthenticated error from handleTokenRenewal',
