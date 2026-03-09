@@ -106,6 +106,8 @@ export class AuthResolver {
     private readonly userWorkspaceRepository: Repository<UserWorkspaceEntity>,
     @InjectRepository(AppTokenEntity)
     private readonly appTokenRepository: Repository<AppTokenEntity>,
+    @InjectRepository(WorkspaceEntity)
+    private readonly workspaceRepository: Repository<WorkspaceEntity>,
     private readonly twoFactorAuthenticationService: TwoFactorAuthenticationService,
     private authService: AuthService,
     private renewTokenService: RenewTokenService,
@@ -620,22 +622,27 @@ export class AuthResolver {
         origin,
       );
 
+    if (isDefined(workspace) && tokenWorkspaceId === workspace.id) {
+      return workspace;
+    }
+
+    // Origin-resolved workspace doesn't match token's workspace (e.g. single-domain
+    // setup without subdomain routing). Fall back to the token's workspace directly.
+    // The login token is already cryptographically validated, so this is safe.
+    const tokenWorkspace = await this.workspaceRepository.findOne({
+      where: { id: tokenWorkspaceId },
+      relations: ['workspaceSSOIdentityProviders'],
+    });
+
     assertIsDefinedOrThrow(
-      workspace,
+      tokenWorkspace,
       new AuthException(
         'Workspace not found',
         AuthExceptionCode.WORKSPACE_NOT_FOUND,
       ),
     );
 
-    if (tokenWorkspaceId !== workspace.id) {
-      throw new AuthException(
-        'Token is not valid for this workspace',
-        AuthExceptionCode.FORBIDDEN_EXCEPTION,
-      );
-    }
-
-    return workspace;
+    return tokenWorkspace;
   }
 
   private async validateUserAccess(

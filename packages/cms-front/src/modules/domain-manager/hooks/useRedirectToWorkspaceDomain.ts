@@ -18,9 +18,14 @@ export const useRedirectToWorkspaceDomain = () => {
     searchParams?: Record<string, string | boolean>,
     target?: string,
   ) => {
-    if (!isMultiWorkspaceEnabled) return;
+    // When multi-workspace is disabled, redirect to the same domain instead
+    // of the workspace subdomain URL (which requires wildcard DNS).
+    const effectiveBaseUrl = isMultiWorkspaceEnabled
+      ? baseUrl
+      : window.location.origin;
+
     redirect(
-      buildWorkspaceUrl(baseUrl, pathname, {
+      buildWorkspaceUrl(effectiveBaseUrl, pathname, {
         ...searchParams,
         ...(await buildSearchParamsFromUrlSyncedStates()),
       }),
